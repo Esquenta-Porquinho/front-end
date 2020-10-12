@@ -4,7 +4,7 @@
 
 
 <div align="center">
-    <img src=".github\photo.png" alt="This is an image of a pig under a book with <> symbols in front of it">
+    <img src=".github\pig.png" alt="This is an image of a pig under a book with <> symbols in front of it">
 </div> 
 
 
