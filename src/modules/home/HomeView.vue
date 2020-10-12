@@ -1,9 +1,9 @@
 <template>
   <v-app>
     <v-navigation-drawer
-      v-model="drawer"
-      :clipped="$vuetify.breakpoint.lgAndUp"
-      app
+        v-model="drawer"
+        :clipped="$vuetify.breakpoint.lgAndUp"
+        app
     >
       <v-list>
         <template v-for="sideMenuLink in sideMenuLinks">
@@ -20,25 +20,25 @@
     </v-navigation-drawer>
 
     <v-app-bar
-      :clipped-left="$vuetify.breakpoint.lgAndUp"
-      color="primary"
-      dark
-      app
+        :clipped-left="$vuetify.breakpoint.lgAndUp"
+        color="primary"
+        dark
+        app
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"/>
       <v-toolbar-title style="width: 300px" class="ml-0 pl-4">
         <span class="title hidden-sm-and-down" v-text="$t('common.title')"/>
       </v-toolbar-title>
       <v-text-field
-        flat
-        solo-inverted
-        hide-details
-        prepend-inner-icon="mdi-magnify"
-        :label="$t('common.search')"
-        class="hidden-sm-and-down"
+          flat
+          solo-inverted
+          hide-details
+          prepend-inner-icon="mdi-magnify"
+          :label="$t('common.search')"
+          class="hidden-sm-and-down"
       ></v-text-field>
       <v-spacer/>
-      <LanguageSwitcher />
+      <LanguageSwitcher/>
       <v-btn icon exact :to="{name: 'HomeView'}">
         <v-icon v-text="'mdi-apps'"/>
       </v-btn>
@@ -50,7 +50,7 @@
             <v-card outlined :to="{name: feature.link}">
               <v-card-title v-text="$t(feature.text)"/>
               <v-divider/>
-              <v-card-text v-text="$t(feature.description)" />
+              <v-card-text v-text="$t(feature.description)"/>
             </v-card>
           </v-col>
         </v-col>
@@ -61,47 +61,59 @@
 </template>
 
 <script>
-  import LanguageSwitcher from "@/modules/home/LanguageSwitcher";
-  export default {
-    components: {LanguageSwitcher},
-    data() {
-      return {
-        drawer: false,
-        sideMenuLinks: [
-          {
-            link: 'HomeView',
-            icon: 'mdi-home',
-            text: 'common.home'
-          },
-          {
-            link: 'SettingsView',
-            icon: 'mdi-cog',
-            text: 'common.settings'
-          }
-        ],
-        features: [
-          {
-            link: 'Some0View',
-            text: 'some.view0.title',
-            description: 'some.view0.description'
-          },
-          {
-            link: 'Some1View',
-            text: 'some.view1.title',
-            description: 'some.view1.description'
-          },
-          {
-            link: 'Some2View',
-            text: 'some.view2.title',
-            description: 'some.view2.description'
-          },
-        ]
-      }
-    },
-    computed: {
-      shouldShowFeaturesMenu() {
-        return this.$route.name === 'HomeView'
-      }
+import LanguageSwitcher from "@/modules/home/LanguageSwitcher";
+import {create, getById} from "@/modules/api/todos/todos-service";
+
+export default {
+  components: {LanguageSwitcher},
+  async mounted() {
+    const getExample = await getById(1);
+    const postExample = await create({
+      title: 'foo',
+      body: 'bar',
+      userId: 1,
+    })
+    console.log(getExample)
+    console.log(postExample)
+  },
+  data() {
+    return {
+      drawer: false,
+      sideMenuLinks: [
+        {
+          link: 'HomeView',
+          icon: 'mdi-home',
+          text: 'common.home'
+        },
+        {
+          link: 'SettingsView',
+          icon: 'mdi-cog',
+          text: 'common.settings'
+        }
+      ],
+      features: [
+        {
+          link: 'Some0View',
+          text: 'some.view0.title',
+          description: 'some.view0.description'
+        },
+        {
+          link: 'Some1View',
+          text: 'some.view1.title',
+          description: 'some.view1.description'
+        },
+        {
+          link: 'Some2View',
+          text: 'some.view2.title',
+          description: 'some.view2.description'
+        },
+      ]
+    }
+  },
+  computed: {
+    shouldShowFeaturesMenu() {
+      return this.$route.name === 'HomeView'
     }
   }
+}
 </script>
