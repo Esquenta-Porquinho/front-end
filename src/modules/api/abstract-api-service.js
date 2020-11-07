@@ -1,16 +1,16 @@
 import axios from "axios";
 
-
 const _instance = axios.create({
-  baseURL: 'https://jsonplaceholder.typicode.com',
-  // Your url here
+  // baseURL: 'https://jsonplaceholder.typicode.com',
+  baseURL: 'http://localhost:8080',
 });
 
 _instance.interceptors.request.use(req => {
   const token = localStorage.getItem("token")
   if (token) {
-    req.headers.authorization = `Bearer ${token}`;
+    req.headers.authorization = `IFC ${token}`;
   }
+  
   return req;
 });
 
