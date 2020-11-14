@@ -1,7 +1,7 @@
 <template>
   <v-toolbar
       class="white--text"
-      color="#8C2B2B"
+      color="primary"
   >
     <v-toolbar-title class="bold headline">Esquenta Porquinho</v-toolbar-title>
   </v-toolbar>

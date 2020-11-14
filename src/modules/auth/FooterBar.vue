@@ -2,7 +2,7 @@
   <v-footer
       app
       class="white--text"
-      color="#8C2B2B"
+      color="primary"
   >
     <span>Bacharelado em Sistemas de Informação - IFC/Araquari</span>
     <v-spacer></v-spacer>

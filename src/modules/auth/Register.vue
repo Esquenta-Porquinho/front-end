@@ -20,10 +20,8 @@
             <v-card>
               <v-toolbar
                   class="white--text"
-                  color="#8C2B2B"
+                  color="primary"
                   flat
-                  height="60px"
-                  width="100%"
               >
                 <v-toolbar-title> Register</v-toolbar-title>
                 <v-spacer></v-spacer>
@@ -62,22 +60,18 @@
                       :counter="16"
                       :rules="rules.passwordRules"
                       label="Password"
-                      name="password"
                       prepend-icon="mdi-lock"
                       required
                       type="password"
                   >
                   </v-text-field>
                 </v-form>
-                <v-divider></v-divider>
+              </v-card-text>
+              <v-divider></v-divider>
                 <v-card-actions>
                   <v-btn
                       block
-                      class="white--text"
-                      color="#BF757B"
-                      elevation="2"
-
-                      type="text"
+                      color="secondary"
                       @click="send()"
                   >Register
                   </v-btn>
@@ -85,14 +79,11 @@
                 <v-card-actions>
                   <v-btn
                       block
-                      class="white--text"
-                      color="#BF757B"
-                      elevation="2"
+                      color="secondary"
                       @click="reset()"
                   >Reset
                   </v-btn>
                 </v-card-actions>
-              </v-card-text>
             </v-card>
           </v-flex>
         </v-layout>

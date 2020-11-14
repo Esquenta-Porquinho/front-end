@@ -21,10 +21,8 @@
             <v-card>
               <v-toolbar
                   class="white--text"
-                  color="#8C2B2B"
+                  color="primary"
                   flat
-                  height="60px"
-                  width="100%"
               >
                 <v-toolbar-title display-3> Login</v-toolbar-title>
                 <v-spacer></v-spacer>
@@ -46,7 +44,6 @@
                       v-model="credentials.email"
                       :rules="rules.email"
                       label="E-mail"
-                      name="email"
                       prepend-icon="mdi-account-circle"
                       required
                       type="text"
@@ -56,7 +53,6 @@
                       v-model="credentials.password"
                       :rules="rules.password"
                       label="Password"
-                      name="password"
                       prepend-icon="mdi-lock"
                       required
                       type="password"
@@ -68,10 +64,7 @@
               <v-card-actions>
                 <v-btn
                     block
-                    class="white--text"
-                    color="#BF757B"
-                    elevation="2"
-                    type="text"
+                    color="secondary"
                     @click="send()"
                 >Login
                 </v-btn>
@@ -79,9 +72,7 @@
               <v-card-actions>
                 <v-btn
                     block
-                    class="white--text"
-                    color="#BF757B"
-                    elevation="2"
+                    color="secondary"
                     @click="register()"
                 >Create account
                 </v-btn>
