@@ -120,10 +120,16 @@ export default {
   }),
   methods: {
     async send() {
-      if (this.$refs.form.validate() && await login(this.credentials)) {
-        router.push("/home");
+      if (!this.$refs.form.validate()) {
+        this.errorShow = true;
       }
-      this.errorShow = true;
+
+      try {
+        await login(this.credentials)
+        router.push("/home");
+      } catch (e) {
+        this.errorShow = true;
+      }
     },
     register() {
       router.push('/register')

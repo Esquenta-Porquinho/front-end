@@ -120,7 +120,6 @@ export default {
       ],
       emailRules: [
         v => !!v || 'E-mail is required !',
-        v => /@/.test(v) || 'E-mail must be valid !',
       ],
       passwordRules: [
         v => !!v || "Password is required !",
@@ -131,10 +130,16 @@ export default {
   }),
   methods: {
     async send() {
-      if (this.$refs.form.validate() && await create(this.information)) {
-        router.push("/login");
+      if (!this.$refs.form.validate()) {
+        this.errorShow = true;
       }
-      this.errorShow = true;
+
+      try {
+        await create(this.information)
+        router.push("/login");
+      } catch (e) {
+        this.errorShow = true;
+      }
     },
     reset() {
       this.$refs.form.reset();
