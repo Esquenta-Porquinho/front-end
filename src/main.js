@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import App from './App.vue';
+import App from '@/App.vue';
 import Clipboard from 'v-clipboard'
 import router from './router'
 import vuetify from './plugins/vuetify';
