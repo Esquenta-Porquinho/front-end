@@ -15,6 +15,6 @@ export default {
 
 <style>
 html {
-  overflow-y: hidden;
+  overflow-y: hidden !important;
 }
 </style>

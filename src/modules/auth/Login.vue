@@ -1,89 +1,74 @@
 <template>
-  <v-app
-  >
-    <v-main
-        :style="{'background-image': 'url(' + require('../../assets/background.png') + ')'}"
-    >
-      <ToolBar/>
-      <v-container
-          fill-height
-          fluid
-      >
-        <v-layout
-            align-center
-            justify-center
-        >
-          <v-flex
-              md4
-              sm8
-              xs12
-          >
-            <v-card>
-              <v-toolbar
-                  class="white--text"
-                  color="primary"
-                  flat
+  <div class="background">
+    <ToolBar/>
+    <v-container fill-height fluid>
+      <v-row align="center" justify="center">
+        <v-col md="4" sm="8" xs="12">
+          <v-card>
+            <v-toolbar
+                class="white--text"
+                color="primary"
+                flat
+            >
+              <v-toolbar-title display-3> Login</v-toolbar-title>
+              <v-spacer></v-spacer>
+              <v-icon dark right>mdi-login</v-icon>
+            </v-toolbar>
+            <v-card-text>
+              <v-form
+                  ref="form"
               >
-                <v-toolbar-title display-3> Login</v-toolbar-title>
-                <v-spacer></v-spacer>
-                <v-icon dark right>mdi-login</v-icon>
-              </v-toolbar>
-              <v-card-text>
-                <v-form
-                    ref="form"
+                <v-alert
+                    v-show="errorShow"
+                    outlined
+                    text
+                    type="error"
                 >
-                  <v-alert
-                      v-show="errorShow"
-                      outlined
-                      text
-                      type="error"
-                  >
-                    Login or password are wrong !
-                  </v-alert>
-                  <v-text-field
-                      v-model="credentials.email"
-                      :rules="rules.email"
-                      label="E-mail"
-                      prepend-icon="mdi-account-circle"
-                      required
-                      type="text"
-                  >
-                  </v-text-field>
-                  <v-text-field
-                      v-model="credentials.password"
-                      :rules="rules.password"
-                      label="Password"
-                      prepend-icon="mdi-lock"
-                      required
-                      type="password"
-                  >
-                  </v-text-field>
-                </v-form>
-              </v-card-text>
-              <v-divider></v-divider>
-              <v-card-actions>
-                <v-btn
-                    block
-                    color="secondary"
-                    @click="send()"
-                >Login
-                </v-btn>
-              </v-card-actions>
-              <v-card-actions>
-                <v-btn
-                    block
-                    color="secondary"
-                    @click="register()"
-                >Create account
-                </v-btn>
-              </v-card-actions>
-            </v-card>
-          </v-flex>
-        </v-layout>
-      </v-container>
-      <FooterBar/>
-    </v-main>
-  </v-app>
+                  Login or password are wrong !
+                </v-alert>
+                <v-text-field
+                    v-model="credentials.email"
+                    :rules="rules.email"
+                    label="E-mail"
+                    prepend-icon="mdi-account-circle"
+                    required
+                    type="text"
+                >
+                </v-text-field>
+                <v-text-field
+                    v-model="credentials.password"
+                    :rules="rules.password"
+                    label="Password"
+                    prepend-icon="mdi-lock"
+                    required
+                    type="password"
+                >
+                </v-text-field>
+              </v-form>
+            </v-card-text>
+            <v-divider></v-divider>
+            <v-card-actions>
+              <v-btn
+                  block
+                  color="secondary"
+                  @click="send()"
+              >Login
+              </v-btn>
+            </v-card-actions>
+            <v-card-actions>
+              <v-btn
+                  block
+                  color="secondary"
+                  @click="register()"
+              >Create account
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
+    <FooterBar/>
+  </div>
 </template>
 
 <script>
@@ -129,8 +114,9 @@ export default {
 };
 </script>
 
-<style>
-html {
-  overflow-y: hidden !important;
+<style scoped>
+.background {
+  background-image: url("../../assets/background.png");
+  height: 100%;
 }
 </style>
