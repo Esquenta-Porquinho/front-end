@@ -105,7 +105,7 @@
 <script>
 import FooterBar from '@/modules/auth/FooterBar';
 import ToolBar from '@/modules/auth/ToolBar';
-import {create} from '../api/todos/auth-service';
+import {create} from '../api/auth/auth-service';
 import router from "@/router/";
 
 export default {

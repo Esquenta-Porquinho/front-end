@@ -62,20 +62,9 @@
 
 <script>
 import LanguageSwitcher from "@/modules/home/LanguageSwitcher";
-import {create, getById} from "@/modules/api/todos/todos-service";
 
 export default {
   components: {LanguageSwitcher},
-  async mounted() {
-    const getExample = await getById(1);
-    const postExample = await create({
-      title: 'foo',
-      body: 'bar',
-      userId: 1,
-    })
-    console.log(getExample)
-    console.log(postExample)
-  },
   data() {
     return {
       drawer: false,

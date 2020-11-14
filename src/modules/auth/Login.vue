@@ -98,7 +98,7 @@
 <script>
 import FooterBar from '@/modules/auth/FooterBar';
 import ToolBar from '@/modules/auth/ToolBar';
-import {login} from '../api/todos/auth-service';
+import {login} from '../api/auth/auth-service';
 import router from "@/router/";
 
 export default {
