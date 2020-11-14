@@ -7,7 +7,7 @@
     >
       <v-list>
         <template v-for="sideMenuLink in sideMenuLinks">
-          <v-list-item exact :key="$t(sideMenuLink.text)" :to="{name: sideMenuLink.link}">
+          <v-list-item :key="$t(sideMenuLink.text)" :to="{name: sideMenuLink.link}" exact>
             <v-list-item-action>
               <v-icon v-text="sideMenuLink.icon"/>
             </v-list-item-action>
@@ -21,25 +21,25 @@
 
     <v-app-bar
         :clipped-left="$vuetify.breakpoint.lgAndUp"
+        app
         color="primary"
         dark
-        app
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer"/>
-      <v-toolbar-title style="width: 300px" class="ml-0 pl-4">
+      <v-toolbar-title class="ml-0 pl-4" style="width: 300px">
         <span class="title hidden-sm-and-down" v-text="$t('common.title')"/>
       </v-toolbar-title>
       <v-text-field
-          flat
-          solo-inverted
-          hide-details
-          prepend-inner-icon="mdi-magnify"
           :label="$t('common.search')"
           class="hidden-sm-and-down"
+          flat
+          hide-details
+          prepend-inner-icon="mdi-magnify"
+          solo-inverted
       ></v-text-field>
       <v-spacer/>
       <LanguageSwitcher/>
-      <v-btn icon exact :to="{name: 'HomeView'}">
+      <v-btn :to="{name: 'HomeView'}" exact icon>
         <v-icon v-text="'mdi-apps'"/>
       </v-btn>
     </v-app-bar>
@@ -47,7 +47,7 @@
       <v-row align="start" justify="center">
         <v-col cols="9" sm="8">
           <v-col v-for="feature in features" :key="feature.link">
-            <v-card outlined :to="{name: feature.link}">
+            <v-card :to="{name: feature.link}" outlined>
               <v-card-title v-text="$t(feature.text)"/>
               <v-divider/>
               <v-card-text v-text="$t(feature.description)"/>

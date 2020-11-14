@@ -1,15 +1,15 @@
 <template>
-  <v-speed-dial absolute direction="bottom" right class="mr-12">
+  <v-speed-dial absolute class="mr-12" direction="bottom" right>
     <template v-slot:activator>
       <v-btn icon large>
         <v-icon v-text="'mdi-earth'"/>
       </v-btn>
     </template>
-    <v-btn :key="language.lang"
-           @click="setLanguageTo(language.lang)" class="title"
+    <v-btn v-for="language in languages"
+           :key="language.lang" class="title"
            rounded
            small
-           v-for="language in languages"
+           @click="setLanguageTo(language.lang)"
            v-text="language.emoji"/>
   </v-speed-dial>
 </template>

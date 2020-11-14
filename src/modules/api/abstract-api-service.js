@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const _instance = axios.create({
-  // baseURL: 'https://jsonplaceholder.typicode.com',
   baseURL: 'http://localhost:8080',
 });
 
@@ -10,7 +9,7 @@ _instance.interceptors.request.use(req => {
   if (token) {
     req.headers.authorization = `IFC ${token}`;
   }
-  
+
   return req;
 });
 

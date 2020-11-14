@@ -1,10 +1,10 @@
 import {_post} from "@/modules/api/abstract-api-service";
 
 const create = async (data) => {
-  try{
+  try {
     await _post('/users', {}, data);
     return true;
-  }catch{
+  } catch {
     return false;
   }
 }
@@ -12,9 +12,9 @@ const create = async (data) => {
 const login = async (data) => {
   try {
     let response = await _post('/users/login', {}, data);
-    localStorage.setItem('token', response.token);  
+    localStorage.setItem('token', response.token);
     return true;
-  }catch{
+  } catch {
     return false;
   }
 }
