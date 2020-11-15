@@ -1,12 +1,8 @@
 <template>
-  <v-footer
-      app
-      class="white--text"
-      color="primary"
-  >
-    <span>Bacharelado em Sistemas de Informação - IFC/Araquari</span>
-    <v-spacer></v-spacer>
-    <span>&copy; IFC-Araquari</span>
+  <v-footer app class="white--text" color="primary">
+    <span v-text="$t('common.college.name')"/>
+    <v-spacer/>
+    <span v-text="$t('common.college.unit')"/>
   </v-footer>
 </template>
 

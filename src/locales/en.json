@@ -1,4 +1,13 @@
 {
+  "common": {
+    "project": {
+      "name": "Esquenta Porquinho"
+    },
+    "college": {
+      "name": "Bacharelado em Sistemas de Informação - IFC/Araquari",
+      "unit": "© IFC-Araquari"
+    }
+  },
   "views": {
     "auth": {
       "login": {
