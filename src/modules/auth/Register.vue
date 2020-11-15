@@ -84,6 +84,7 @@ import FooterBar from '@/modules/auth/FooterBar';
 import ToolBar from '@/modules/auth/ToolBar';
 import {create} from '../api/auth/auth-service';
 import router from "@/router/";
+import {emailRules, nameRules, passwordRules} from "@/modules/auth/auth-rules";
 
 export default {
   components: {FooterBar, ToolBar},
@@ -92,18 +93,9 @@ export default {
     information: {},
     errorShow: false,
     rules: {
-      nameRules: [
-        v => !!v || 'Name is required !',
-        v => (v && v.length >= 3) || 'Name must be more than 3 characters !',
-      ],
-      emailRules: [
-        v => !!v || 'E-mail is required !',
-      ],
-      passwordRules: [
-        v => !!v || "Password is required !",
-        v => (v && v.length >= 8) || "The password must be more than 8 characters.",
-        v => (v && v.length <= 16) || "The password must be less than 8 characters."
-      ]
+      nameRules: nameRules,
+      emailRules: emailRules,
+      passwordRules: passwordRules
     },
   }),
   methods: {

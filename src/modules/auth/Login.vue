@@ -76,22 +76,21 @@ import FooterBar from '@/modules/auth/FooterBar';
 import ToolBar from '@/modules/auth/ToolBar';
 import {login} from '../api/auth/auth-service';
 import router from "@/router/";
+import {emailRules, passwordRules} from "@/modules/auth/auth-rules";
+
 
 export default {
   components: {FooterBar, ToolBar},
   name: "Login",
   data: () => ({
-    credentials: {},
+    credentials: {
+      email: '',
+      password: ''
+    },
     errorShow: false,
     rules: {
-      email: [
-        v => !!v || "Usuário é obrigatório.",
-        v => (/@/.test(v)) || "O e-mail precisa ser válido",
-      ],
-      password: [
-        v => !!v || "Senha é obrigatória.",
-        v => (v && v.length >= 5) || "A senha deve ser maior que 5 caracteres."
-      ]
+      email: emailRules,
+      password: passwordRules
     }
   }),
   methods: {
