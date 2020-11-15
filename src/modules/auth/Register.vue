@@ -10,9 +10,9 @@
                 color="primary"
                 flat
             >
-              <v-toolbar-title> Register</v-toolbar-title>
-              <v-spacer></v-spacer>
-              <v-icon dark right>mdi-account-plus</v-icon>
+              <v-toolbar-title v-text="$t('views.auth.register.title')"/>
+              <v-spacer/>
+              <v-icon dark right v-text="'mdi-account-plus'" />
             </v-toolbar>
             <v-card-text>
               <v-form ref="form">
@@ -28,7 +28,7 @@
                     v-model="information.name"
                     :counter="30"
                     :rules="rules.nameRules"
-                    label="Name"
+                    :label="$t('fields.name')"
                     prepend-icon="mdi-account"
                     required
                 >
@@ -37,7 +37,7 @@
                     v-model="information.email"
                     :counter="45"
                     :rules="rules.emailRules"
-                    label="E-mail"
+                    :label="$t('fields.email')"
                     prepend-icon="mdi-email"
                     required
                 >
@@ -46,7 +46,7 @@
                     v-model="information.password"
                     :counter="16"
                     :rules="rules.passwordRules"
-                    label="Password"
+                    :label="$t('fields.password')"
                     prepend-icon="mdi-lock"
                     required
                     type="password"
@@ -60,16 +60,16 @@
                   block
                   color="secondary"
                   @click="send()"
-              >Register
-              </v-btn>
+                  v-text="$t('views.auth.register.buttons.register')"
+              />
             </v-card-actions>
             <v-card-actions>
               <v-btn
                   block
                   color="secondary"
                   @click="reset()"
-              >Reset
-              </v-btn>
+                  v-text="$t('views.auth.register.buttons.reset')"
+              />
             </v-card-actions>
           </v-card>
         </v-col>
