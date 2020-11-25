@@ -1,8 +1,42 @@
 {
   "common": {
-    "title": "Title",
-    "home": "Home",
-    "settings": "Settings",
-    "search": "Search"
+    "project": {
+      "name": "Esquenta Porquinho"
+    },
+    "college": {
+      "name": "Bacharelado em Sistemas de Informação - IFC/Araquari",
+      "unit": "© IFC-Araquari"
+    }
+  },
+  "views": {
+    "auth": {
+      "login": {
+        "title": "Login",
+        "error": "Verify your credentials",
+        "buttons": {
+          "login": "Login",
+          "create": "Create account"
+        }
+      },
+      "register": {
+        "title": "Register",
+        "error": "Failed to register",
+        "buttons": {
+          "register": "register",
+          "reset": "Reset"
+        }
+      }
+    }
+  },
+  "fields": {
+    "name": "Name",
+    "email": "E-mail",
+    "password": "Password"
+  },
+  "rules": {
+    "required": "{field} is required.",
+    "invalid": "{field} is invalid.",
+    "length_bigger_than": "{field} must have {length}+ characters",
+    "length_less_than": "{field} must have {length}- characters"
   }
 }

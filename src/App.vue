@@ -7,14 +7,14 @@
 </template>
 
 <script>
-  export default {
-    name: 'App'
-  }
+export default {
+  name: 'App'
+}
 </script>
 
 
 <style>
-  html {
-    overflow-y: hidden;
-  }
+html {
+  overflow-y: hidden !important;
+}
 </style>
