@@ -13,17 +13,12 @@ _instance.interceptors.request.use(req => {
   return req;
 });
 
-// const urlPattern = '/users/{userId}/products/{productId}' ;
-// const pathParams = {userId: '111', productId: "222"};
-// const url = _convertUrl(urlPattern, pathParams);
-// url = 'users/111/products/222
 const _convertUrl = (urlPattern, pathParams = {}) => {
   Object
       .entries(pathParams)
       .forEach(([key, value]) => urlPattern = urlPattern.replace(`{${key}}`, value))
   return urlPattern
 }
-
 
 const _get = async (urlPattern, pathParams) => {
   try {
