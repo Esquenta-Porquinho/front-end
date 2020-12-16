@@ -4,29 +4,83 @@
       "name": "Esquenta Porquinho"
     },
     "college": {
-      "name": "Bacharelado em Sistemas de Informação - IFC/Araquari",
+      "name": "Bacharelado em Sistemas de Informação",
       "unit": "© IFC-Araquari"
+    },
+    "menu":{
+      "charts":"Monitoring",
+      "users":{
+        "title":"Users",
+        "list":"List Users",
+        "requests":"Requests",
+        "profile":"Profile"
+      },
+      "boxes":{
+        "title":"Box",
+        "list":"List Boxes",
+        "new":"New Box"
+      },
+      "matrix":{
+        "title":"Matrix",
+        "list":"List Matrix",
+        "new":"New Matrix"
+      },
+      "logout":"Logout"
     }
   },
   "views": {
     "auth": {
       "login": {
         "title": "Login",
-        "error": "Verify your credentials",
-        "buttons": {
-          "login": "Login",
-          "create": "Create account"
-        }
+        "error": "Verify your credentials"
       },
       "register": {
         "title": "Register",
-        "error": "Failed to register",
-        "buttons": {
-          "register": "register",
-          "reset": "Reset"
+        "error": "Failed to register"
+      }
+    },
+    "user":{
+      "profile":{
+        "title": "Profile"
+      },
+      "update":{
+        "title": "Update",
+        "error": "Something went wrong !"
+      },
+      "logs":{
+        "title":"Logs",
+        "headers":{
+          "user":"User",
+          "date":"Date",
+          "action":"Actions"
+        }
+      },
+      "updateRole":{
+        "title":"Update Role"
+      },
+      "requests":{
+        "title":"Requests"
+      },
+      "all":{
+        "title":"Users",
+        "headers":{
+          "name":"Name",
+          "email":"E-mail",
+          "role":"Role"
         }
       }
     }
+  },
+  "buttons":{
+    "update":"Update",
+    "reset": "Reset",
+    "register":"Register",
+    "login":"Login",
+    "create":"Create Account",
+    "activate":"Activate",
+    "exclude":"Exclude",
+    "logs":"Logs",
+    "deactivate":"Deactivate"
   },
   "fields": {
     "name": "Name",
