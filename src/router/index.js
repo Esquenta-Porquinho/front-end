@@ -4,6 +4,12 @@ import HomeView from '../modules/home/HomeView'
 import SettingsView from '../modules/home/SettingsView';
 import LoginView from '../modules/auth/Login';
 import RegisterView from '../modules/auth/Register';
+import UserView from  '../modules/user/UserView';
+import UserUpdateView from '../modules/user/UserUpdateView';
+import UserLogsView from '../modules/user/UserLogsView';
+import UserUpdateRoleView from '../modules/user/UserUpdateRoleView';
+import UserRequestsView from '../modules/user/UserRequestsView';
+import UserAllView from '../modules/user/UserAllView';
 
 Vue.use(VueRouter)
 
@@ -30,7 +36,36 @@ const routes = [
     name: 'RegisterView',
     component: RegisterView
   },
-
+  {
+    path: '/user',
+    name: 'UserView',
+    component: UserView
+  },
+  {
+    path: '/user/update',
+    name: 'UserUpdateView',
+    component: UserUpdateView
+  },
+  {
+    path: '/user/logs',
+    name: 'UserLogsView',
+    component: UserLogsView
+  },
+  {
+    path: '/user/role',
+    name: 'UserUpdateRoleView',
+    component: UserUpdateRoleView
+  },
+  {
+    path: '/users/requests',
+    name: 'UserRequestsView',
+    component: UserRequestsView
+  },
+  {
+    path: '/users',
+    name: 'UserAllView',
+    component: UserAllView
+  },
 ]
 
 const router = new VueRouter({
