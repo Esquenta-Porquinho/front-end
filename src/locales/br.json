@@ -1,8 +1,104 @@
 {
   "common": {
-    "title": "Título",
-    "home": "Início",
-    "settings": "Configurações",
-    "search": "Pesquisar"
+    "project": {
+      "name": "Esquenta Porquinho"
+    },
+    "college": {
+      "name": "Bacharelado em Sistemas de Informação",
+      "unit": "© IFC-Araquari"
+    },
+    "menu":{
+      "charts":"Monitor",
+      "users":{
+        "title":"Usuários",
+        "list":"Listar Usuários",
+        "requests":"Requesições",
+        "profile":"Perfil"
+      },
+      "boxes":{
+        "title":"Baias",
+        "list":"Listar Baias",
+        "new":"Nova Baia"
+      },
+      "matrix":{
+        "title":"Matrizes",
+        "list":"Listar Matrizes",
+        "new":"Nova Matriz"
+      },
+      "logout":"Logout"
+    }
+  },
+  "views": {
+    "auth": {
+      "login": {
+        "title": "Login",
+        "error": "Verifique e-mail ou senha",
+        "buttons": {
+          "login": "Login",
+          "create": "Criar Conta"
+        }
+      },
+      "register": {
+        "title": "Register",
+        "error": "Falha ao Registrar",
+        "buttons": {
+          "register": "Registrar",
+          "reset": "Limpar"
+        }
+      }
+    },
+    "user":{
+      "profile":{
+        "title": "Perfil"
+      },
+      "update":{
+        "title": "Atualizar",
+        "error": "Algo deu errado !"
+      },
+      "logs":{
+        "title":"Logs",
+        "headers":{
+          "user":"Usuário",
+          "date":"Data",
+          "action":"Ação"
+        }
+      },
+      "updateRole":{
+        "title":"Atualizar Permissões"
+      },
+      "requests":{
+        "title":"Requisições"
+      },
+      "all":{
+        "title":"Usuários",
+        "headers":{
+          "name":"Nome",
+          "email":"E-mail",
+          "role":"Permissões"
+        }
+      }
+    }
+  },
+  "buttons":{
+    "update":"Atualizar",
+    "reset": "Limpar",
+    "register":"Cadastrar",
+    "login":"Login",
+    "create":"Cadastrar-se",
+    "activate":"Aceitar",
+    "exclude":"Excluir",
+    "logs":"Logs",
+    "deactivate":"Desativar"
+  },
+  "fields": {
+    "name": "Nome",
+    "email": "E-mail",
+    "password": "Senha"
+  },
+  "rules": {
+    "required": "{field} é obrigatório.",
+    "invalid": "{field} é inválido.",
+    "length_bigger_than": "{field} precisa ter {length}+ caracteres",
+    "length_less_than": "{field} precisa ter {length}- caracteres"
   }
 }
