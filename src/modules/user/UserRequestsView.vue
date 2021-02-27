@@ -21,8 +21,8 @@
                   <tbody>
                     <tr v-for="user in users" :key="user.id">
                       <td><v-icon v-text="'mdi-account'"/>
-                      <td>{{ user.name }}</td>
-                      <td>{{ user.email }}</td>
+                      <td v-text="user.name" />
+                      <td v-text="user.email" />
                       <td><v-btn x-small color="success" v-text="$t('buttons.activate')"/></td>
                       <td><v-btn x-small color="error" v-text="$t('buttons.exclude')"/></td>
                     </tr>
