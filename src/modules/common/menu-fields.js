@@ -1,5 +1,4 @@
-const adminFields = () => {
-  return [
+const adminFields = [
     { title: "common.menu.charts", icon: 'mdi-chart-line' },
     { 
       title: "common.menu.boxes.title", icon: 'mdi-home', 
@@ -24,8 +23,7 @@ const adminFields = () => {
     },
     { title: "common.menu.logout", icon: 'mdi-logout' }
   ]
-}
-
+  
 export{
   adminFields,
 }
