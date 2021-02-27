@@ -50,7 +50,7 @@
                   block
                   color="secondary"
                   v-text="$t('buttons.update')"
-                  :to="'/user/update'"
+                  :to="{name:'UserUpdateView'}"
                 />
               </v-card-actions>
             </v-card-text>
@@ -76,9 +76,6 @@ export default {
         role:"ADMIN"
     },
   }),
-  methods: {
-
-  },
 }
 </script>
 
