@@ -68,7 +68,7 @@ export default {
     drawer: false,
     items: []
   }),
-  created:function(){
+  created(){
     const token = localStorage.getItem('token')
     const decodedJwt = jwt_decode(token)
     const role = decodedJwt.role[0]
