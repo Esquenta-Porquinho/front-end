@@ -80,7 +80,7 @@
 </template>
 
 <script>
-import FooterBar from '@/modules/auth/FooterBar';
+import FooterBar from '@/modules/common/FooterBar';
 import ToolBar from '@/modules/auth/ToolBar';
 import {create} from '../api/auth/auth-service';
 import router from "@/router/";
