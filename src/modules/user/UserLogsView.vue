@@ -18,7 +18,7 @@
             </v-toolbar>
               <v-data-table
                 :headers="headers"
-                :items="desserts"
+                :items="logs"
                 :items-per-page="5"
                 class="elevation-1"
               ></v-data-table>
@@ -47,7 +47,7 @@ export default {
       { text: "Date", value:"date"},
       { text: "Action", value:"action"},
     ],
-    desserts: [
+    logs: [
       {
         name: 'Jean Moraes',
         date:'22/06/2014',
