@@ -69,6 +69,20 @@
           "role":"Role"
         }
       }
+    },
+    "matrix":{
+      "all":{
+        "title":"Matrices",
+        "headers":{
+          "matrix":"Matrix"
+        }
+      },
+      "new":{
+        "title":"New Matrix"
+      },
+      "update":{
+        "title":"Update Matrix"
+      }
     }
   },
   "buttons":{
@@ -80,12 +94,16 @@
     "activate":"Activate",
     "exclude":"Exclude",
     "logs":"Logs",
-    "deactivate":"Deactivate"
+    "deactivate":"Deactivate",
+    "add":"Add"
   },
   "fields": {
     "name": "Name",
     "email": "E-mail",
-    "password": "Password"
+    "password": "Password",
+    "matrix":"Matrix",
+    "active":"Active",
+    "inactive":"Inactive"
   },
   "rules": {
     "required": "{field} is required.",

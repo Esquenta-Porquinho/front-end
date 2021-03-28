@@ -77,6 +77,20 @@
           "role":"Permissões"
         }
       }
+    },
+    "matrix":{
+      "all":{
+        "title":"Matrizes",
+        "headers":{
+          "matrix":"Matriz"
+        }
+      },
+      "new":{
+        "title":"Nova Matriz"
+      },
+      "update":{
+        "title":"Atualizar Matriz"
+      }
     }
   },
   "buttons":{
@@ -88,12 +102,16 @@
     "activate":"Aceitar",
     "exclude":"Excluir",
     "logs":"Logs",
-    "deactivate":"Desativar"
+    "deactivate":"Desativar",
+    "add":"Adicionar"
   },
   "fields": {
     "name": "Nome",
     "email": "E-mail",
-    "password": "Senha"
+    "password": "Senha",
+    "matrix":"Matriz",
+    "active":"Ativo",
+    "inactive":"Inativo"
   },
   "rules": {
     "required": "{field} é obrigatório.",
