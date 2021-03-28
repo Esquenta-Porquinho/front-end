@@ -1,23 +1,23 @@
 <template>
   <div class="background">
-    <ToolBar/>
+    <ToolBar />
     <v-container fluid>
       <v-row align="center" justify="center">
         <v-col md="4" sm="8" xs="12">
           <v-card>
-            <v-toolbar 
-              color="primary" 
+            <v-toolbar
+              color="primary"
               class="white--text"
               height="60px"
-              width="100%" 
+              width="100%"
               flat
             >
-              <v-toolbar-title v-text="$t('views.matrix.update.title')"/>
-              <v-spacer/>
-              <v-icon dark right v-text="'mdi-pig'"/>
+              <v-toolbar-title v-text="$t('views.matrix.update.title')" />
+              <v-spacer />
+              <v-icon dark right v-text="'mdi-pig'" />
             </v-toolbar>
             <v-card-text>
-              <v-form ref="form" v-model="valid">   
+              <v-form ref="form" v-model="valid">
                 <v-text-field
                   :label="$t('fields.matrix')"
                   type="number"
@@ -54,7 +54,7 @@
         </v-col>
       </v-row>
     </v-container>
-    <FooterBar/>
+    <FooterBar />
   </div>
 </template>
 
@@ -64,19 +64,19 @@ import FooterBar from "@/modules/common/FooterBar";
 import { matrixNumberRules } from "@/modules/matrix/matrix-rules";
 
 export default {
-  components: {ToolBar, FooterBar},
-  data:() => ({
+  components: { ToolBar, FooterBar },
+  data: () => ({
     valid: true,
-    rules:{
-      matrix:matrixNumberRules
-    }
-  })
-}
+    rules: {
+      matrix: matrixNumberRules,
+    },
+  }),
+};
 </script>
 
 <style scoped>
-  .background {
-    background-image: url("../../assets/background1.png");
-    height: 100%;
-  }
+.background {
+  background-image: url("../../assets/background1.png");
+  height: 100%;
+}
 </style>

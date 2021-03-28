@@ -5,10 +5,10 @@
         <v-col>
           <v-card outlined>
             <v-card-title>
-              {{ $t('common.settings') }}
+              {{ $t("common.settings") }}
             </v-card-title>
-            <v-divider/>
-            <v-card-text class="mt-3" v-text="'🚧'"/>
+            <v-divider />
+            <v-card-text class="mt-3" v-text="'🚧'" />
           </v-card>
         </v-col>
       </v-col>
@@ -18,6 +18,6 @@
 
 <script>
 export default {
-  name: 'CoinsConverterView'
-}
+  name: "CoinsConverterView",
+};
 </script>
