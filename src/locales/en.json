@@ -83,6 +83,22 @@
       "update":{
         "title":"Update Matrix"
       }
+    },
+    "parameters":{
+      "update":{
+        "title":"Update Parameters"
+      },
+      "new":{
+        "title":"New Parameters"
+      },
+      "list":{
+        "title":"Parameters",
+        "header":{
+          "week":"Week",
+          "status":"Status",
+          "box":"Box"
+        }
+      }
     }
   },
   "buttons":{
@@ -103,7 +119,13 @@
     "password": "Password",
     "matrix":"Matrix",
     "active":"Active",
-    "inactive":"Inactive"
+    "inactive":"Inactive",
+    "maximum_ambient_temperature":"Maximum ammbient temperature",
+    "minimum_ambient_temperature":"Minimum ambient temperature",
+    "maximum_floor_temperature":"Maximum floor temperature",
+    "minimum_floor_temperature":"Minimum floor temperature",
+    "week":"Week",
+    "box":"Box"
   },
   "rules": {
     "required": "{field} is required.",
