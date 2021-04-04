@@ -1,21 +1,17 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import { authRoutes } from '@/modules/auth/auth-routes';
-import { userRoutes } from '@/modules/user/user-routes';
-import { matrixRoutes } from '@/modules/matrix/matrix-routes';
+import Vue from "vue";
+import VueRouter from "vue-router";
+import { authRoutes } from "@/modules/auth/auth-routes";
+import { userRoutes } from "@/modules/user/user-routes";
+import { matrixRoutes } from "@/modules/matrix/matrix-routes";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
-const routes = [
-  ...authRoutes,
-  ...userRoutes,
-  ...matrixRoutes,
-]
+const routes = [...authRoutes, ...userRoutes, ...matrixRoutes];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

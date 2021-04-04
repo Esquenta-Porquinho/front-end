@@ -1,24 +1,22 @@
 <template>
-  <v-pagination
-    :length="length"
-  />
+  <v-pagination :length="length" />
 </template>
 
 <script>
 export default {
-  name:'Pagination',
-  props:{
-    countItems:{
+  name: "Pagination",
+  props: {
+    countItems: {
       type: Number,
-      required:true
+      required: true,
     },
-    itemsPerPage:{
+    itemsPerPage: {
       type: Number,
-      required:true
-    }
+      required: true,
+    },
   },
-  data:(props)=>({
-    length: Math.ceil(props.countItems / props.itemsPerPage)
-  })
-}
+  data: (props) => ({
+    length: Math.ceil(props.countItems / props.itemsPerPage),
+  }),
+};
 </script>
