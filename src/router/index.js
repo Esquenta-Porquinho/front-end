@@ -3,10 +3,16 @@ import VueRouter from "vue-router";
 import { authRoutes } from "@/modules/auth/auth-routes";
 import { userRoutes } from "@/modules/user/user-routes";
 import { matrixRoutes } from "@/modules/matrix/matrix-routes";
+import { gestationRoutes } from "@/modules/gestation/gestation-routes";
 
 Vue.use(VueRouter);
 
-const routes = [...authRoutes, ...userRoutes, ...matrixRoutes];
+const routes = [
+  ...authRoutes,
+  ...userRoutes,
+  ...matrixRoutes,
+  ...gestationRoutes,
+];
 
 const router = new VueRouter({
   mode: "history",
