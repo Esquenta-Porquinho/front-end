@@ -91,6 +91,22 @@
       "update":{
         "title":"Atualizar Matriz"
       }
+    },
+    "gestation":{
+      "update":{
+        "title":"Atualizar Gestação"
+      },
+      "new":{
+        "title":"Nova Gestação"
+      },
+      "list":{
+        "title":"Gestações",
+        "header":{
+          "box":"Baia",
+          "matrix":"Matriz",
+          "status":"Status"
+        }
+      }
     }
   },
   "buttons":{
@@ -111,7 +127,15 @@
     "password": "Senha",
     "matrix":"Matriz",
     "active":"Ativo",
-    "inactive":"Inativo"
+    "inactive":"Inativo",
+    "expected_parturition":"Parto Esperado",
+    "effective_parturition":"Parto Efetivo",
+    "number_parturition":"Número do Parto",
+    "live_pigs":"Leitões Vivos",
+    "dead_pigs":"Leitões Mortos",
+    "weaning":"Desmame",
+    "box":"Baia",
+    "status":"Status"
   },
   "rules": {
     "required": "{field} é obrigatório.",

@@ -83,6 +83,22 @@
       "update":{
         "title":"Update Matrix"
       }
+    },
+    "gestation":{
+      "update":{
+        "title":"Update Gestation"
+      },
+      "new":{
+        "title":"New Gestation"
+      },
+      "list":{
+        "title":"Gestations",
+        "header":{
+          "box":"Box",
+          "matrix":"Matrix",
+          "status":"Status"
+        }
+      }
     }
   },
   "buttons":{
@@ -103,7 +119,15 @@
     "password": "Password",
     "matrix":"Matrix",
     "active":"Active",
-    "inactive":"Inactive"
+    "inactive":"Inactive",
+    "expected_parturition":"Expected Parturition",
+    "effective_parturition":"Effective Parturition",
+    "number_parturition":"Number of Parturition",
+    "live_pigs":"Live Pigs",
+    "dead_pigs":"Dead Pigs",
+    "weaning":"Weaning",
+    "box":"Box",
+    "status":"Status"
   },
   "rules": {
     "required": "{field} is required.",
