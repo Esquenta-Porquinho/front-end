@@ -1,20 +1,20 @@
 <template>
   <div class="background">
-    <ToolBar/>
+    <ToolBar />
     <v-container fluid>
       <v-row align="center" justify="center">
         <v-col md="4" sm="8" xs="12">
           <v-card>
-            <v-toolbar 
+            <v-toolbar
               color="primary"
-              class="white--text" 
-              height="60px" 
-              width="100%" 
+              class="white--text"
+              height="60px"
+              width="100%"
               flat
             >
-              <v-toolbar-title v-text="$t('views.user.update.title')"/>
-              <v-spacer/>
-              <v-icon dark right v-text="'mdi-account-check'"/>
+              <v-toolbar-title v-text="$t('views.user.update.title')" />
+              <v-spacer />
+              <v-icon dark right v-text="'mdi-account-check'" />
             </v-toolbar>
             <v-card-text>
               <v-form ref="form">
@@ -76,24 +76,28 @@
         </v-col>
       </v-row>
     </v-container>
-    <FooterBar/>
+    <FooterBar />
   </div>
 </template>
 
 <script>
 import ToolBar from "@/modules/common/ToolBar";
 import FooterBar from "@/modules/common/FooterBar";
-import {create} from '../api/auth/auth-service';
+import { create } from "../api/auth/auth-service";
 import router from "@/router/";
-import {emailRules, nameRules, passwordRules} from "@/modules/auth/auth-rules";
+import {
+  emailRules,
+  nameRules,
+  passwordRules,
+} from "@/modules/auth/auth-rules";
 
 export default {
-  components: {ToolBar, FooterBar},
-  name:"Update User",
-  data:() => ({
-    information:{},
-    errorShow:false,
-    rules:{
+  components: { ToolBar, FooterBar },
+  name: "Update User",
+  data: () => ({
+    information: {},
+    errorShow: false,
+    rules: {
       nameRules: nameRules,
       emailRules: emailRules,
       passwordRules: passwordRules,
@@ -106,7 +110,7 @@ export default {
       }
 
       try {
-        await create(this.information)
+        await create(this.information);
         router.push("/user");
       } catch (e) {
         this.errorShow = true;
@@ -114,9 +118,9 @@ export default {
     },
     reset() {
       this.$refs.form.reset();
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>
