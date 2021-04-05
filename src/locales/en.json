@@ -99,6 +99,23 @@
           "status":"Status"
         }
       }
+    },
+    "box":{
+      "update":{
+        "title":"Update Box"
+      },
+      "new":{
+        "title":"New Box"
+      },
+      "list":{
+        "title":"Boxes",
+        "header":{
+          "number":"Number",
+          "area":"Area",
+          "status":"Status",
+          "controller":"Controller"
+        }
+      }
     }
   },
   "buttons":{
@@ -127,7 +144,11 @@
     "dead_pigs":"Dead Pigs",
     "weaning":"Weaning",
     "box":"Box",
-    "status":"Status"
+    "status":"Status",
+    "number":"Number",
+    "area":"Area",
+    "controller":"Controller",
+    "lamp":"Lamp"
   },
   "rules": {
     "required": "{field} is required.",
