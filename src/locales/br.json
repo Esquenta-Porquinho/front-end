@@ -91,6 +91,23 @@
       "update":{
         "title":"Atualizar Matriz"
       }
+    },
+    "box":{
+      "update":{
+        "title":"Atualizar Baia"
+      },
+      "new":{
+        "title":"Nova Baia"
+      },
+      "list":{
+        "title":"Baia",
+        "header":{
+          "number":"Número",
+          "area":"Área",
+          "status":"Status",
+          "controller":"Controlador"
+        }
+      }
     }
   },
   "buttons":{
@@ -111,7 +128,11 @@
     "password": "Senha",
     "matrix":"Matriz",
     "active":"Ativo",
-    "inactive":"Inativo"
+    "inactive":"Inativo",
+    "number":"Número",
+    "area":"Área",
+    "controller":"Controlador",
+    "lamp":"Lâmpada"
   },
   "rules": {
     "required": "{field} é obrigatório.",

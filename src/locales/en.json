@@ -83,6 +83,23 @@
       "update":{
         "title":"Update Matrix"
       }
+    },
+    "box":{
+      "update":{
+        "title":"Update Box"
+      },
+      "new":{
+        "title":"New Box"
+      },
+      "list":{
+        "title":"Boxes",
+        "header":{
+          "number":"Number",
+          "area":"Area",
+          "status":"Status",
+          "controller":"Controller"
+        }
+      }
     }
   },
   "buttons":{
@@ -103,7 +120,11 @@
     "password": "Password",
     "matrix":"Matrix",
     "active":"Active",
-    "inactive":"Inactive"
+    "inactive":"Inactive",
+    "number":"Number",
+    "area":"Area",
+    "controller":"Controller",
+    "lamp":"Lamp"
   },
   "rules": {
     "required": "{field} is required.",
