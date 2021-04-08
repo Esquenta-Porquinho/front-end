@@ -16,6 +16,14 @@ const lengthLessThan = (v, field, length) => {
   );
 };
 
+const sizeBiggerThan = (v, field, size) => {
+  return v?.value >= size || i18n.t("rules.size_bigger_than"), { field, size };
+};
+
+const sizeLessThan = (v, field, size) => {
+  return v?.value <= size || i18n.t("rules.size_less_than"), { field, size };
+};
+
 const email = (v) => {
   return (
     /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) ||
@@ -23,4 +31,11 @@ const email = (v) => {
   );
 };
 
-export { required, lengthBiggerThan, lengthLessThan, email };
+export {
+  required,
+  lengthBiggerThan,
+  lengthLessThan,
+  email,
+  sizeBiggerThan,
+  sizeLessThan,
+};
