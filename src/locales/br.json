@@ -107,6 +107,23 @@
           "box":"Baia"
         }
       }
+    },
+    "box":{
+      "update":{
+        "title":"Atualizar Baia"
+      },
+      "new":{
+        "title":"Nova Baia"
+      },
+      "list":{
+        "title":"Baia",
+        "header":{
+          "number":"Número",
+          "area":"Área",
+          "status":"Status",
+          "controller":"Controlador"
+        }
+      }
     }
   },
   "buttons":{
@@ -133,7 +150,11 @@
     "maximum_floor_temperature":"Temperatura máxima do piso",
     "minimum_floor_temperature":"Temperatura mínima do piso",
     "week":"Semana",
-    "box":"Baia"
+    "box":"Baia",
+    "number":"Número",
+    "area":"Área",
+    "controller":"Controlador",
+    "lamp":"Lâmpada"
   },
   "rules": {
     "required": "{field} é obrigatório.",

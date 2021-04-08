@@ -99,6 +99,23 @@
           "box":"Box"
         }
       }
+    },
+    "box":{
+      "update":{
+        "title":"Update Box"
+      },
+      "new":{
+        "title":"New Box"
+      },
+      "list":{
+        "title":"Boxes",
+        "header":{
+          "number":"Number",
+          "area":"Area",
+          "status":"Status",
+          "controller":"Controller"
+        }
+      }
     }
   },
   "buttons":{
@@ -125,7 +142,11 @@
     "maximum_floor_temperature":"Maximum floor temperature",
     "minimum_floor_temperature":"Minimum floor temperature",
     "week":"Week",
-    "box":"Box"
+    "box":"Box",
+    "number":"Number",
+    "area":"Area",
+    "controller":"Controller",
+    "lamp":"Lamp"
   },
   "rules": {
     "required": "{field} is required.",
