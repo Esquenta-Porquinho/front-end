@@ -92,6 +92,22 @@
         "title":"Atualizar Matriz"
       }
     },
+    "parameters":{
+      "update":{
+        "title":"Atualizar Parâmetros"
+      },
+      "new":{
+        "title":"Novos Parâmetros"
+      },
+      "list":{
+        "title":"Parâmetros",
+        "header":{
+          "week":"Semana",
+          "status":"Status",
+          "box":"Baia"
+        }
+      }
+    },
     "box":{
       "update":{
         "title":"Atualizar Baia"
@@ -129,6 +145,12 @@
     "matrix":"Matriz",
     "active":"Ativo",
     "inactive":"Inativo",
+    "maximum_ambient_temperature":"Temperatura máxima do ambiente",
+    "minimum_ambient_temperature":"Temperatura mínima do ambiente",
+    "maximum_floor_temperature":"Temperatura máxima do piso",
+    "minimum_floor_temperature":"Temperatura mínima do piso",
+    "week":"Semana",
+    "box":"Baia",
     "number":"Número",
     "area":"Área",
     "controller":"Controlador",
