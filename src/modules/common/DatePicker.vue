@@ -1,19 +1,18 @@
 <template>
   <v-menu
-    v-model="menu2"
+    v-model="menu"
     :close-on-content-click="false"
     :nudge-right="40"
     transition="scale-transition"
     offset-y
     min-width="auto"
   >
-    <template v-slot:activator="{ on, attrs }">
+    <template v-slot:activator="{ on }">
       <v-text-field
         v-model="date"
         :label="label"
         prepend-icon="mdi-calendar"
         :rules="expectedParturitionRules"
-        v-bind="attrs"
         v-on="on"
       ></v-text-field>
     </template>
