@@ -25,7 +25,6 @@
                 />
                 <DatePicker
                   :label="$t('fields.effective_parturition')"
-                  :rules="rules.expectedParturitionRules"
                   @pickDate="gestation.effective_parturition = $event"
                 />
                 <v-text-field
@@ -46,7 +45,6 @@
                 />
                 <DatePicker
                   :label="$t('fields.weaning')"
-                  :rules="rules.expectedParturitionRules"
                   @pickDate="gestation.weaning = $event"
                 />
                 <v-select
@@ -116,10 +114,10 @@ export default {
     boxes: {},
     matrixes: {},
     rules: {
-      expectedParturitionRules: expectedParturitionRules,
-      numberParturitionRules: numberParturitionRules,
-      matrixRules: matrixRules,
-      boxRules: boxRules,
+      expectedParturitionRules,
+      numberParturitionRules,
+      matrixRules,
+      boxRules,
     },
   }),
   methods: {
