@@ -18,16 +18,14 @@
             </v-toolbar>
             <v-card-text>
               <v-form ref="form" v-model="valid">
-                <v-text-field
+                <DatePicker
                   :label="$t('fields.expected_parturition')"
-                  type="date"
-                  prepend-icon="mdi-calendar-month"
                   :rules="rules.expectedParturitionRules"
+                  @pickDate="gestation.expected_parturition = $event"
                 />
-                <v-text-field
+                <DatePicker
                   :label="$t('fields.effective_parturition')"
-                  type="date"
-                  prepend-icon="mdi-calendar-month"
+                  @pickDate="gestation.effective_parturition = $event"
                 />
                 <v-text-field
                   :label="$t('fields.number_parturition')"
@@ -45,10 +43,9 @@
                   type="number"
                   prepend-icon="mdi-skull"
                 />
-                <v-text-field
+                <DatePicker
                   :label="$t('fields.weaning')"
-                  type="date"
-                  prepend-icon="mdi-calendar-month"
+                  @pickDate="gestation.weaning = $event"
                 />
                 <v-select
                   :items="boxes"
@@ -101,6 +98,7 @@
 <script>
 import ToolBar from "@/modules/common/ToolBar";
 import FooterBar from "@/modules/common/FooterBar";
+import DatePicker from "@/modules/common/DatePicker";
 import {
   expectedParturitionRules,
   numberParturitionRules,
@@ -109,7 +107,7 @@ import {
 } from "@/modules/gestation/gestation-rules";
 
 export default {
-  components: { ToolBar, FooterBar },
+  components: { ToolBar, FooterBar, DatePicker },
   data: () => ({
     valid: true,
     boxes: {},
