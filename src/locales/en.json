@@ -84,6 +84,22 @@
         "title":"Update Matrix"
       }
     },
+    "gestation":{
+      "update":{
+        "title":"Update Gestation"
+      },
+      "new":{
+        "title":"New Gestation"
+      },
+      "list":{
+        "title":"Gestations",
+        "header":{
+          "box":"Box",
+          "matrix":"Matrix",
+          "status":"Status"
+        }
+      }
+    },
     "parameters":{
       "update":{
         "title":"Update Parameters"
@@ -137,6 +153,13 @@
     "matrix":"Matrix",
     "active":"Active",
     "inactive":"Inactive",
+    "expected_parturition":"Expected Parturition",
+    "effective_parturition":"Effective Parturition",
+    "number_parturition":"Number of Parturition",
+    "live_pigs":"Live Pigs",
+    "dead_pigs":"Dead Pigs",
+    "weaning":"Weaning",
+    "status":"Status",
     "maximum_ambient_temperature":"Maximum ammbient temperature",
     "minimum_ambient_temperature":"Minimum ambient temperature",
     "maximum_floor_temperature":"Maximum floor temperature",
