@@ -4,6 +4,7 @@ import { authRoutes } from "@/modules/auth/auth-routes";
 import { userRoutes } from "@/modules/user/user-routes";
 import { matrixRoutes } from "@/modules/matrix/matrix-routes";
 import { gestationRoutes } from "@/modules/gestation/gestation-routes";
+import { parametersRoutes } from "../modules/parameters/parameters-routes";
 import { boxRoutes } from "../modules/box/box-routes";
 
 Vue.use(VueRouter);
@@ -13,6 +14,7 @@ const routes = [
   ...userRoutes,
   ...matrixRoutes,
   ...gestationRoutes,
+  ...parametersRoutes,
   ...boxRoutes,
 ];
 
