@@ -113,10 +113,10 @@ export default {
     boxes: {},
     matrixes: {},
     rules: {
-      expectedParturitionRules: expectedParturitionRules,
-      numberParturitionRules: numberParturitionRules,
-      matrixRules: matrixRules,
-      boxRules: boxRules,
+      expectedParturitionRules,
+      numberParturitionRules,
+      matrixRules,
+      boxRules,
     },
   }),
 };
