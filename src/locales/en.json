@@ -32,11 +32,19 @@
     "auth": {
       "login": {
         "title": "Login",
-        "error": "Verify your credentials"
+        "error": "Verify your credentials",
+        "buttons": {
+          "login": "Login",
+          "create": "Create account"
+        }
       },
       "register": {
         "title": "Register",
-        "error": "Failed to register"
+        "error": "Failed to register",
+        "buttons": {
+          "register": "Register",
+          "reset": "Reset"
+        }
       }
     },
     "user":{
