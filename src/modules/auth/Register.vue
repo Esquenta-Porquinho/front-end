@@ -1,8 +1,8 @@
 <template>
   <div class="background">
     <ToolBar />
-    <v-container fill-height fluid>
-      <v-row align="center" justify="center">
+    <v-container fluid>
+      <v-row align="" justify="center">
         <v-col md="4" sm="8" xs="12">
           <v-card>
             <v-toolbar class="white--text" color="primary" flat>
@@ -12,11 +12,15 @@
             </v-toolbar>
             <v-card-text>
               <v-form ref="form">
-                <v-alert v-show="errorShow" outlined text type="error">
-                  Failed to register
-                </v-alert>
+                <v-alert
+                  v-show="errorShow"
+                  outlined
+                  text
+                  type="error"
+                  v-text="$t('views.auth.register.error')"
+                />
                 <v-text-field
-                  v-model="information.name"
+                  v-model="user.name"
                   :counter="30"
                   :rules="rules.nameRules"
                   :label="$t('fields.name')"
@@ -25,7 +29,7 @@
                 >
                 </v-text-field>
                 <v-text-field
-                  v-model="information.email"
+                  v-model="user.email"
                   :counter="45"
                   :rules="rules.emailRules"
                   :label="$t('fields.email')"
@@ -34,7 +38,7 @@
                 >
                 </v-text-field>
                 <v-text-field
-                  v-model="information.password"
+                  v-model="user.password"
                   :counter="16"
                   :rules="rules.passwordRules"
                   :label="$t('fields.password')"
@@ -51,7 +55,7 @@
                 block
                 color="secondary"
                 @click="send()"
-                v-text="$t('views.auth.register.buttons.register')"
+                v-text="$t('buttons.register')"
               />
             </v-card-actions>
             <v-card-actions>
@@ -59,7 +63,7 @@
                 block
                 color="secondary"
                 @click="reset()"
-                v-text="$t('views.auth.register.buttons.reset')"
+                v-text="$t('buttons.reset')"
               />
             </v-card-actions>
           </v-card>
@@ -85,12 +89,12 @@ export default {
   components: { FooterBar, ToolBar },
   name: "Register",
   data: () => ({
-    information: {},
+    user: {},
     errorShow: false,
     rules: {
-      nameRules: nameRules,
-      emailRules: emailRules,
-      passwordRules: passwordRules,
+      nameRules,
+      emailRules,
+      passwordRules,
     },
   }),
   methods: {
@@ -98,9 +102,8 @@ export default {
       if (!this.$refs.form.validate()) {
         this.errorShow = true;
       }
-
       try {
-        await create(this.information);
+        await create(this.user);
         router.push("/login");
       } catch (e) {
         this.errorShow = true;

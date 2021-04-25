@@ -32,19 +32,11 @@
     "auth": {
       "login": {
         "title": "Login",
-        "error": "Verifique e-mail ou senha",
-        "buttons": {
-          "login": "Login",
-          "create": "Criar Conta"
-        }
+        "error": "Verifique e-mail ou senha"
       },
       "register": {
-        "title": "Register",
-        "error": "Falha ao Registrar",
-        "buttons": {
-          "register": "Registrar",
-          "reset": "Limpar"
-        }
+        "title": "Registrar-se",
+        "error": "Falha ao Registrar"
       }
     },
     "user":{
