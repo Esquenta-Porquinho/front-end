@@ -14,7 +14,7 @@
 
     - A Single Page Application with Vue.js
     - The most common mapping REST requests using axios, as DELETE, GET, POST, PUT and PATCH
-    - A bilingue texts with i18n plugin
+    - A bilingual texts with i18n plugin
     - A system design using Vuetify plugin
     - Authentication with JWT Token
     - Authorization with the Roles pattern
@@ -28,42 +28,24 @@
 
 ***
 
-## Running using cli
-
-> First you'll need to install the external requirements
-
-### External Requirements
-
-1. We are using [Nodejs 12](https://www.oracle.com/br/java/technologies/javase-jdk11-downloads.html).
-
-### Install Project
-```git clone https://github.com/Esquenta-Porquinho/frond-end.git```
-
-```cd front-end```
-
-```npm install```
-
-```npm run serve```
-
-
 ## Running with docker
 
 > First you'll need to install the [docker](https://docs.docker.com/engine/install/) +19.03 and docker-compose](https://docs.docker.com/compose/install/) +1.17
 
-### Install Project
-```git clone https://github.com/Esquenta-Porquinho/frond-end.git```
+### Useful commands Project
+```bash
+# Start up a container with hot reload and binds port 8080 to host 8081
+make up.dev  
+make up.dev  # Stop containers
 
-```docker build --pull --rm -f "front-end/Dockerfile" -t front-end:latest "front-end"```
+# Deploy using NGINX and binds port 80 to host 80
+make up.prod 
+make up.prod # Stop containers
 
-```docker run --rm -d  -p 80:80/tcp front-end:latest```
+# Cleans docker stuff after containers are stopped
+make clean   
+```
 
-> To stop the container use the hash that's appear after the last command
-
-```docker stop {hash}```
-
-## :link: Useful links
-- [Back-End Repository](https://github.com/Esquenta-Porquinho/back-end)
-- [Documentation Repository](https://github.com/Esquenta-Porquinho/documentation)
 ***
 
 ## 🤝 Contributing

@@ -92,6 +92,38 @@
         "title":"Atualizar Matriz"
       }
     },
+    "gestation":{
+      "update":{
+        "title":"Atualizar Gestação"
+      },
+      "new":{
+        "title":"Nova Gestação"
+      },
+      "list":{
+        "title":"Gestações",
+        "header":{
+          "box":"Baia",
+          "matrix":"Matriz",
+          "status":"Status"
+        }
+      }
+    },
+    "parameters":{
+      "update":{
+        "title":"Atualizar Parâmetros"
+      },
+      "new":{
+        "title":"Novos Parâmetros"
+      },
+      "list":{
+        "title":"Parâmetros",
+        "header":{
+          "week":"Semana",
+          "status":"Status",
+          "box":"Baia"
+        }
+      }
+    },
     "box":{
       "update":{
         "title":"Atualizar Baia"
@@ -138,6 +170,19 @@
     "matrix":"Matriz",
     "active":"Ativo",
     "inactive":"Inativo",
+    "expected_parturition":"Parto Esperado",
+    "effective_parturition":"Parto Efetivo",
+    "number_parturition":"Número do Parto",
+    "live_pigs":"Leitões Vivos",
+    "dead_pigs":"Leitões Mortos",
+    "weaning":"Desmame",
+    "status":"Status",
+    "maximum_ambient_temperature":"Temperatura máxima do ambiente",
+    "minimum_ambient_temperature":"Temperatura mínima do ambiente",
+    "maximum_floor_temperature":"Temperatura máxima do piso",
+    "minimum_floor_temperature":"Temperatura mínima do piso",
+    "week":"Semana",
+    "box":"Baia",
     "number":"Número",
     "area":"Área",
     "controller":"Controlador",
