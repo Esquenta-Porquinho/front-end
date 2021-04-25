@@ -7,7 +7,7 @@ import UserAllView from "@/modules/user/UserAllView";
 
 const userRoutes = [
   {
-    path: "/user",
+    path: "/user/:id",
     name: "UserView",
     component: UserView,
   },
@@ -33,7 +33,7 @@ const userRoutes = [
   },
   {
     path: "/users",
-    name: "UserAllView",
+    name: "UsersView",
     component: UserAllView,
   },
 ];
