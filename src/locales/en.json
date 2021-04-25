@@ -132,6 +132,15 @@
           "controller":"Controller"
         }
       }
+    },
+    "charts":{
+      "labels":{
+        "temperature":"Temperature",
+        "datetime":"Date/Time",
+        "monitoring":"Monitoring",
+        "box":"Box",
+        "sensors":"Sensors"
+      }
     }
   },
   "buttons":{

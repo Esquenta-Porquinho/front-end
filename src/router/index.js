@@ -6,6 +6,7 @@ import { matrixRoutes } from "@/modules/matrix/matrix-routes";
 import { gestationRoutes } from "@/modules/gestation/gestation-routes";
 import { parametersRoutes } from "../modules/parameters/parameters-routes";
 import { boxRoutes } from "../modules/box/box-routes";
+import { chartsRoutes } from "../modules/charts/charts-routes";
 
 Vue.use(VueRouter);
 
@@ -13,9 +14,10 @@ const routes = [
   ...authRoutes,
   ...userRoutes,
   ...matrixRoutes,
+  ...boxRoutes,
+  ...chartsRoutes,
   ...gestationRoutes,
   ...parametersRoutes,
-  ...boxRoutes,
 ];
 
 const router = new VueRouter({
