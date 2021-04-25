@@ -1,5 +1,5 @@
 <script>
-import { Line, Chart } from "vue-chartjs";
+import { Line } from "vue-chartjs";
 import { options } from "@/modules/charts/charts-options";
 import { readings } from "@/modules/charts/charts-mock";
 
