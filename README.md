@@ -32,14 +32,18 @@
 
 > First you'll need to install the [docker](https://docs.docker.com/engine/install/) +19.03 and docker-compose](https://docs.docker.com/compose/install/) +1.17
 
-### Install Project
+### Useful commands Project
 ```bash
-make up.dev
-```
+# Start up a container with hot reload and binds port 8080 to host 8081
+make up.dev  
+make up.dev  # Stop containers
 
-### Deploy Project
-```bash
-make up.prod
+# Deploy using NGINX and binds port 80 to host 80
+make up.prod 
+make up.prod # Stop containers
+
+# Cleans docker stuff after containers are stopped
+make clean   
 ```
 
 ***
