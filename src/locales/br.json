@@ -8,22 +8,32 @@
       "unit": "© IFC-Araquari"
     },
     "menu":{
-      "charts":"Monitor",
+      "charts":"Monitoramento",
       "users":{
         "title":"Usuários",
-        "list":"Listar Usuários",
-        "requests":"Requesições",
+        "all":"Usuários",
+        "requests":"Solicitações",
         "profile":"Perfil"
       },
-      "boxes":{
-        "title":"Baias",
-        "list":"Listar Baias",
+      "box":{
+        "title":"Baia",
+        "all":"Baias",
         "new":"Nova Baia"
       },
       "matrix":{
-        "title":"Matrizes",
-        "list":"Listar Matrizes",
+        "title":"Matriz",
+        "all":"Matrizes",
         "new":"Nova Matriz"
+      },
+      "gestation":{
+        "title":"Gestação",
+        "all":"Gestações",
+        "new":"Nova Gestações"
+      },
+      "parameters":{
+        "title":"Parâmetros",
+        "all":"Parâmetros",
+        "new":"Novos Parâmetros"
       },
       "logout":"Logout"
     }
