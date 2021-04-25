@@ -2,7 +2,7 @@
   <div class="background">
     <ToolBar />
     <v-container fluid>
-      <v-row align="" justify="center">
+      <v-row align="center" justify="center">
         <v-col md="4" sm="8" xs="12">
           <v-card>
             <v-toolbar class="white--text" color="primary" flat>
@@ -87,7 +87,6 @@ import {
 
 export default {
   components: { FooterBar, ToolBar },
-  name: "Register",
   data: () => ({
     user: {},
     errorShow: false,
@@ -104,7 +103,7 @@ export default {
       }
       try {
         await create(this.user);
-        router.push("/login");
+        router.push({ name: "LoginView" });
       } catch (e) {
         this.errorShow = true;
       }

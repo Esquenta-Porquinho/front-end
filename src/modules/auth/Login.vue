@@ -84,8 +84,8 @@ export default {
     },
     errorShow: false,
     rules: {
-      email: emailRules,
-      password: passwordRules,
+      emailRules,
+      passwordRules,
     },
   }),
   methods: {
@@ -96,13 +96,13 @@ export default {
 
       try {
         await login(this.credentials);
-        router.push("/home");
+        router.push({ name: "ChartsView" });
       } catch (e) {
         this.errorShow = true;
       }
     },
     register() {
-      router.push("/register");
+      router.push({ name: "RegisterView" });
     },
   },
 };
