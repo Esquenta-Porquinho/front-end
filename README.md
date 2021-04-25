@@ -37,6 +37,11 @@
 make up.dev
 ```
 
+### Deploy Project
+```bash
+make up.prod
+```
+
 ***
 
 ## 🤝 Contributing
