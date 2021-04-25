@@ -108,6 +108,15 @@
           "controller":"Controlador"
         }
       }
+    },
+    "charts":{
+      "labels":{
+        "temperature":"Temperatura",
+        "datetime":"Data/Hora",
+        "monitoring":"Monitoramento",
+        "box":"Baia",
+        "sensors":"Sensores"
+      }
     }
   },
   "buttons":{
