@@ -4,8 +4,10 @@ import Clipboard from "v-clipboard";
 import router from "./router";
 import vuetify from "./plugins/vuetify";
 import i18n from "./plugins/i18n";
+import VueCharts from "vue-chartjs";
 
 Vue.use(Clipboard);
+Vue.use(VueCharts);
 
 new Vue({
   el: "#app",
