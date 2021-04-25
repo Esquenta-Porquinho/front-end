@@ -13,10 +13,10 @@
     </v-app-bar>
 
     <v-navigation-drawer temporary v-model="drawer" app>
-      <v-list-item link :to="'/user'">
+      <v-list-item link :to="{ name: 'UserView', params: { id: user.id } }">
         <v-list-item-content>
-          <v-list-item-title class="title" v-text="'Adamo'" />
-          <v-list-item-subtitle v-text="'adamo@gmail.com'" />
+          <v-list-item-title class="title" v-text="user.name" />
+          <v-list-item-subtitle v-text="user.role" />
         </v-list-item-content>
       </v-list-item>
       <v-divider />
@@ -40,7 +40,7 @@
             <v-list-item-title v-text="$t(child.title)" />
           </v-list-item>
         </v-list-group>
-        <v-list-item v-else link>
+        <v-list-item v-else link :to="item.to">
           <v-list-item-icon>
             <v-icon v-text="item.icon" />
           </v-list-item-icon>
@@ -53,8 +53,13 @@
 
 <script>
 import LanguageSwitcher from "@/modules/common/LanguageSwitcher";
-import { adminFields } from "@/modules/common/menu-fields";
-import jwt_decode from "jwt-decode";
+import router from "@/router/";
+import {
+  adminFields,
+  managerFields,
+  simpleFields,
+} from "@/modules/common/menu-fields";
+import { getCurrentUserRole, logout } from "@/modules/common/token-service";
 
 export default {
   components: { LanguageSwitcher },
@@ -62,18 +67,28 @@ export default {
   data: () => ({
     drawer: false,
     items: [],
+    user: {
+      id: 1,
+      name: "Adamo",
+      role: "ADMIN",
+    },
   }),
   created() {
-    const token = localStorage.getItem("token");
-    const decodedJwt = jwt_decode(token);
-    const role = decodedJwt.role[0];
+    const role = getCurrentUserRole();
 
     switch (role) {
       case "ROLE_ADMIN":
-        this.items = adminFields();
+        this.items = adminFields;
+        break;
+      case "ROLE_MANAGER":
+        this.items = managerFields;
+        break;
+      case "ROLE_SIMPLE":
+        this.items = simpleFields;
         break;
       default:
-        this.items = [{ title: "common.menu.logout", icon: "mdi-logout" }];
+        logout();
+        router.push({ name: "LoginView" });
         break;
     }
   },
