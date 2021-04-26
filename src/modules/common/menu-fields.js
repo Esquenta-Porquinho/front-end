@@ -89,7 +89,11 @@ const fields = [
       },
     ],
   },
-  { title: "common.menu.logout", icon: "mdi-logout" },
+  {
+    title: "common.menu.logout",
+    icon: "mdi-logout",
+    logout: true,
+  },
 ];
 
 const adminFields = fields;

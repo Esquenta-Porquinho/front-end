@@ -40,7 +40,12 @@
             <v-list-item-title v-text="$t(child.title)" />
           </v-list-item>
         </v-list-group>
-        <v-list-item v-else link :to="item.to">
+        <v-list-item
+          v-else
+          link
+          :to="item.to ? item.to : ''"
+          @click="item.logout ? logout() : null"
+        >
           <v-list-item-icon>
             <v-icon v-text="item.icon" />
           </v-list-item-icon>
@@ -53,7 +58,6 @@
 
 <script>
 import LanguageSwitcher from "@/modules/common/LanguageSwitcher";
-import router from "@/router/";
 import {
   adminFields,
   managerFields,
@@ -67,6 +71,7 @@ export default {
   data: () => ({
     drawer: false,
     items: [],
+    logout: logout,
     user: {
       id: 1,
       name: "Adamo",
@@ -87,8 +92,7 @@ export default {
         this.items = simpleFields;
         break;
       default:
-        logout();
-        router.push({ name: "LoginView" });
+        this.logout();
         break;
     }
   },

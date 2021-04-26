@@ -1,4 +1,5 @@
 import jwt_decode from "jwt-decode";
+import router from "@/router/";
 
 const decodeJWT = () => {
   const token = localStorage.getItem("token");
@@ -7,6 +8,7 @@ const decodeJWT = () => {
 
 const logout = () => {
   localStorage.clear();
+  router.push({ name: "LoginView" });
 };
 
 const getCurrentUserRole = () => {
