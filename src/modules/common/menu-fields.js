@@ -98,7 +98,7 @@ const fields = [
 
 const adminFields = fields;
 const managerFields = [
-  ...fields.slice(1, 6),
+  ...fields.slice(0, 5),
   {
     title: "common.menu.users.title",
     icon: "mdi-account",
@@ -118,7 +118,7 @@ const managerFields = [
   ...fields.slice(-1),
 ];
 const simpleFields = [
-  ...fields.slice(1, 6),
+  ...fields.slice(0, 5),
   {
     title: "common.menu.users.title",
     icon: "mdi-account",
