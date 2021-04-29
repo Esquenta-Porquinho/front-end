@@ -40,12 +40,13 @@
             <v-list-item-title v-text="$t(child.title)" />
           </v-list-item>
         </v-list-group>
-        <v-list-item
-          v-else
-          link
-          :to="item.to ? item.to : ''"
-          @click="item.logout ? logout() : null"
-        >
+        <v-list-item v-else-if="item.to" link :to="item.to">
+          <v-list-item-icon>
+            <v-icon v-text="item.icon" />
+          </v-list-item-icon>
+          <v-list-item-title v-text="$t(item.title)" />
+        </v-list-item>
+        <v-list-item v-else link @click="logout()">
           <v-list-item-icon>
             <v-icon v-text="item.icon" />
           </v-list-item-icon>
