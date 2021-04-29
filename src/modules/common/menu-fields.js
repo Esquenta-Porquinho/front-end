@@ -1,4 +1,4 @@
-const fields = [
+const basicFields = [
   {
     title: "common.menu.charts",
     icon: "mdi-chart-line",
@@ -68,6 +68,22 @@ const fields = [
       },
     ],
   },
+];
+const logout = [
+  {
+    title: "common.menu.logout",
+    icon: "mdi-logout",
+    logout: true,
+  },
+];
+const userSimple = [
+  {
+    title: "common.menu.users.profile",
+    icon: "mdi-account-circle",
+    to: { name: "UserView" },
+  },
+];
+const userAdmin = [
   {
     title: "common.menu.users.title",
     icon: "mdi-account",
@@ -89,16 +105,8 @@ const fields = [
       },
     ],
   },
-  {
-    title: "common.menu.logout",
-    icon: "mdi-logout",
-    logout: true,
-  },
 ];
-
-const adminFields = fields;
-const managerFields = [
-  ...fields.slice(0, 5),
+const userManager = [
   {
     title: "common.menu.users.title",
     icon: "mdi-account",
@@ -115,22 +123,9 @@ const managerFields = [
       },
     ],
   },
-  ...fields.slice(-1),
 ];
-const simpleFields = [
-  ...fields.slice(0, 5),
-  {
-    title: "common.menu.users.title",
-    icon: "mdi-account",
-    sub: [
-      {
-        title: "common.menu.users.profile",
-        icon: "mdi-account-circle",
-        to: { name: "UserView" },
-      },
-    ],
-  },
-  ...fields.slice(-1),
-];
+const adminFields = [...basicFields, ...userAdmin, ...logout];
+const managerFields = [...basicFields, ...userManager, ...logout];
+const simpleFields = [...basicFields, ...userSimple, ...logout];
 
 export { adminFields, managerFields, simpleFields };
