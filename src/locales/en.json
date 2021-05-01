@@ -11,19 +11,29 @@
       "charts":"Monitoring",
       "users":{
         "title":"Users",
-        "list":"List Users",
+        "all":"Users",
         "requests":"Requests",
         "profile":"Profile"
       },
-      "boxes":{
+      "box":{
         "title":"Box",
-        "list":"List Boxes",
+        "all":"Boxes",
         "new":"New Box"
       },
       "matrix":{
         "title":"Matrix",
-        "list":"List Matrix",
+        "all":"Matrices",
         "new":"New Matrix"
+      },
+      "gestation":{
+        "title":"Gestation",
+        "all":"Gestations",
+        "new":"New Gestation"
+      },
+      "parameters":{
+        "title":"Matrix",
+        "all":"Parameters",
+        "new":"New Parameters"
       },
       "logout":"Logout"
     }

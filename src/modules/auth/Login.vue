@@ -1,7 +1,7 @@
 <template>
   <div class="background">
     <ToolBar />
-    <v-container fill-height fluid>
+    <v-container fluid>
       <v-row align="center" justify="center">
         <v-col md="4" sm="8" xs="12">
           <v-card>
@@ -48,7 +48,7 @@
                 block
                 color="secondary"
                 @click="send()"
-                v-text="$t('views.auth.login.buttons.login')"
+                v-text="$t('buttons.login')"
               />
             </v-card-actions>
             <v-card-actions>
@@ -56,7 +56,7 @@
                 block
                 color="secondary"
                 @click="register()"
-                v-text="$t('views.auth.login.buttons.create')"
+                v-text="$t('buttons.create')"
               />
             </v-card-actions>
           </v-card>
@@ -84,8 +84,8 @@ export default {
     },
     errorShow: false,
     rules: {
-      email: emailRules,
-      password: passwordRules,
+      emailRules,
+      passwordRules,
     },
   }),
   methods: {
@@ -96,13 +96,13 @@ export default {
 
       try {
         await login(this.credentials);
-        router.push("/home");
+        router.push({ name: "ChartsView" });
       } catch (e) {
         this.errorShow = true;
       }
     },
     register() {
-      router.push("/register");
+      router.push({ name: "RegisterView" });
     },
   },
 };
