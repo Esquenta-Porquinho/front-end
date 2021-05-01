@@ -35,7 +35,8 @@
         "all":"Parameters",
         "new":"New Parameters"
       },
-      "logout":"Logout"
+      "logout":"Logout",
+      "error":"Something wrong happened !"
     }
   },
   "views": {
@@ -163,7 +164,8 @@
     "exclude":"Exclude",
     "logs":"Logs",
     "deactivate":"Deactivate",
-    "add":"Add"
+    "add":"Add",
+    "retry": "Retry"
   },
   "fields": {
     "name": "Name",

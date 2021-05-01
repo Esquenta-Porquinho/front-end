@@ -35,7 +35,8 @@
         "all":"Parâmetros",
         "new":"Novos Parâmetros"
       },
-      "logout":"Logout"
+      "logout":"Logout",
+      "error":"Algo estranho ocorreu!"
     }
   },
   "views": {
@@ -163,7 +164,8 @@
     "exclude":"Excluir",
     "logs":"Logs",
     "deactivate":"Desativar",
-    "add":"Adicionar"
+    "add":"Adicionar",
+    "retry": "Tentar Novamente"
   },
   "fields": {
     "name": "Nome",
