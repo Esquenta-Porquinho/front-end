@@ -7,7 +7,7 @@ import UserAllView from "@/modules/user/UserAllView";
 
 const userRoutes = [
   {
-    path: "/user/:id",
+    path: "/user",
     name: "UserView",
     component: UserView,
   },
