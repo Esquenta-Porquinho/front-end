@@ -52,11 +52,12 @@
     },
     "user":{
       "profile":{
-        "title": "Profile"
+        "title": "Profile",
+        "error": "Something wrong happened !"
       },
       "update":{
         "title": "Update",
-        "error": "Something went wrong !"
+        "error": "Something wrong happened !"
       },
       "logs":{
         "title":"Logs",
@@ -64,13 +65,21 @@
           "user":"User",
           "date":"Date",
           "action":"Actions"
-        }
+        },
+        "errors": "Something wrong happened !"
       },
-      "updateRole":{
-        "title":"Update Role"
+      "update_role":{
+        "title":"Update Role",
+        "error":"Something wrong happened !"
       },
       "requests":{
-        "title":"Requests"
+        "title":"Requests",
+        "headers":{
+          "name":"Name",
+          "email":"E-mail"
+        },
+        "empty": "There is no more requests at yet !",
+        "error": "Something went wrong !"
       },
       "all":{
         "title":"Users",
@@ -78,7 +87,8 @@
           "name":"Name",
           "email":"E-mail",
           "role":"Role"
-        }
+        },
+        "error": "Something wrong happened !"
       }
     },
     "matrix":{
@@ -161,6 +171,7 @@
     "login":"Login",
     "create":"Create Account",
     "activate":"Activate",
+    "accept":"Accept",
     "exclude":"Exclude",
     "logs":"Logs",
     "deactivate":"Deactivate",
