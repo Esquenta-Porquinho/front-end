@@ -1,12 +1,18 @@
 <template>
-  <v-pagination :length="length" />
+  <v-pagination v-model="page" :length="length" @input="next"></v-pagination>
 </template>
 
 <script>
+import router from "@/router/";
+
 export default {
   name: "Pagination",
   props: {
-    countItems: {
+    component: {
+      type: String,
+      required: true,
+    },
+    totalItems: {
       type: Number,
       required: true,
     },
@@ -16,7 +22,14 @@ export default {
     },
   },
   data: (props) => ({
-    length: Math.ceil(props.countItems / props.itemsPerPage),
+    page: 1,
+    name: props.component,
+    length: Math.ceil(props.totalItems / props.itemsPerPage),
   }),
+  methods: {
+    next() {
+      router.push({ name: this.name, params: { page: this.page } });
+    },
+  },
 };
 </script>

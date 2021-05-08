@@ -16,7 +16,7 @@
               <v-spacer />
               <v-icon dark right v-text="'mdi-account'" />
             </v-toolbar>
-            <v-card-text>
+            <v-card-text v-if="user">
               <v-list>
                 <v-list-item-group color="primary">
                   <v-list-item>
@@ -54,6 +54,12 @@
                 />
               </v-card-actions>
             </v-card-text>
+            <v-card-text v-else-if="errorShow">
+              <ErrorLoading error="views.user.profile.error" :event="profile" />
+            </v-card-text>
+            <v-card-text v-else>
+              <Loading />
+            </v-card-text>
           </v-card>
         </v-col>
       </v-row>
@@ -65,17 +71,28 @@
 <script>
 import ToolBar from "@/modules/common/ToolBar";
 import FooterBar from "@/modules/common/FooterBar";
+import ErrorLoading from "@/modules/common/ErrorLoading";
+import Loading from "@/modules/common/Loading";
+import { getCurrentUser } from "@/modules/api/user/user-service";
 
 export default {
-  components: { ToolBar, FooterBar },
+  components: { ToolBar, FooterBar, ErrorLoading, Loading },
   data: () => ({
-    user: {
-      id: 1,
-      name: "Adamo Cornão",
-      email: "adamo@gmail.com",
-      role: "ADMIN",
-    },
+    user: null,
+    errorShow: false,
   }),
+  async created() {
+    await this.profile();
+  },
+  methods: {
+    async profile() {
+      try {
+        this.user = await getCurrentUser();
+      } catch (e) {
+        this.errorShow = true;
+      }
+    },
+  },
 };
 </script>
 

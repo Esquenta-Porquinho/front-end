@@ -4,10 +4,11 @@ import UserLogsView from "@/modules/user/UserLogsView";
 import UserUpdateRoleView from "@/modules/user/UserUpdateRoleView";
 import UserRequestsView from "@/modules/user/UserRequestsView";
 import UserAllView from "@/modules/user/UserAllView";
+import { getCurrentUserRole } from "../common/token-service";
 
 const userRoutes = [
   {
-    path: "/user/:id",
+    path: "/user",
     name: "UserView",
     component: UserView,
   },
@@ -17,24 +18,32 @@ const userRoutes = [
     component: UserUpdateView,
   },
   {
-    path: "/user/logs",
+    path: "/user/:id/logs",
     name: "UserLogsView",
     component: UserLogsView,
   },
   {
-    path: "/user/role",
+    path: "/user/:id/role",
     name: "UserUpdateRoleView",
     component: UserUpdateRoleView,
   },
   {
-    path: "/users/requests",
+    path: "/users/requests/page/:page",
     name: "UserRequestsView",
     component: UserRequestsView,
+    beforeEnter: (to, from, next) => {
+      const role = getCurrentUserRole();
+      role == "SIMPLE" ? next({ name: "UserView" }) : next();
+    },
   },
   {
-    path: "/users",
+    path: "/users/page/:page",
     name: "UsersView",
     component: UserAllView,
+    beforeEnter: (to, from, next) => {
+      const role = getCurrentUserRole();
+      role == "ADMIN" ? next() : next({ name: "UserView" });
+    },
   },
 ];
 
