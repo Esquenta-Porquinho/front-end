@@ -1,8 +1,199 @@
 {
   "common": {
-    "title": "Título",
-    "home": "Início",
-    "settings": "Configurações",
-    "search": "Pesquisar"
+    "project": {
+      "name": "Esquenta Porquinho"
+    },
+    "college": {
+      "name": "Bacharelado em Sistemas de Informação",
+      "unit": "© IFC-Araquari"
+    },
+    "menu":{
+      "charts":"Monitoramento",
+      "users":{
+        "title":"Usuários",
+        "all":"Usuários",
+        "requests":"Solicitações",
+        "profile":"Perfil"
+      },
+      "box":{
+        "title":"Baia",
+        "all":"Baias",
+        "new":"Nova Baia"
+      },
+      "matrix":{
+        "title":"Matriz",
+        "all":"Matrizes",
+        "new":"Nova Matriz"
+      },
+      "gestation":{
+        "title":"Gestação",
+        "all":"Gestações",
+        "new":"Nova Gestações"
+      },
+      "parameters":{
+        "title":"Parâmetros",
+        "all":"Parâmetros",
+        "new":"Novos Parâmetros"
+      },
+      "logout":"Logout"
+    }
+  },
+  "views": {
+    "auth": {
+      "login": {
+        "title": "Login",
+        "error": "Verifique e-mail ou senha"
+      },
+      "register": {
+        "title": "Registrar-se",
+        "error": "Falha ao Registrar"
+      }
+    },
+    "user":{
+      "profile":{
+        "title": "Perfil"
+      },
+      "update":{
+        "title": "Atualizar",
+        "error": "Algo deu errado !"
+      },
+      "logs":{
+        "title":"Logs",
+        "headers":{
+          "user":"Usuário",
+          "date":"Data",
+          "action":"Ação"
+        }
+      },
+      "updateRole":{
+        "title":"Atualizar Permissões"
+      },
+      "requests":{
+        "title":"Requisições"
+      },
+      "all":{
+        "title":"Usuários",
+        "headers":{
+          "name":"Nome",
+          "email":"E-mail",
+          "role":"Permissões"
+        }
+      }
+    },
+    "matrix":{
+      "all":{
+        "title":"Matrizes",
+        "headers":{
+          "matrix":"Matriz"
+        }
+      },
+      "new":{
+        "title":"Nova Matriz"
+      },
+      "update":{
+        "title":"Atualizar Matriz"
+      }
+    },
+    "gestation":{
+      "update":{
+        "title":"Atualizar Gestação"
+      },
+      "new":{
+        "title":"Nova Gestação"
+      },
+      "list":{
+        "title":"Gestações",
+        "header":{
+          "box":"Baia",
+          "matrix":"Matriz",
+          "status":"Status"
+        }
+      }
+    },
+    "parameters":{
+      "update":{
+        "title":"Atualizar Parâmetros"
+      },
+      "new":{
+        "title":"Novos Parâmetros"
+      },
+      "list":{
+        "title":"Parâmetros",
+        "header":{
+          "week":"Semana",
+          "status":"Status",
+          "box":"Baia"
+        }
+      }
+    },
+    "box":{
+      "update":{
+        "title":"Atualizar Baia"
+      },
+      "new":{
+        "title":"Nova Baia"
+      },
+      "list":{
+        "title":"Baia",
+        "header":{
+          "number":"Número",
+          "area":"Área",
+          "status":"Status",
+          "controller":"Controlador"
+        }
+      }
+    },
+    "charts":{
+      "labels":{
+        "temperature":"Temperatura",
+        "datetime":"Data/Hora",
+        "monitoring":"Monitoramento",
+        "box":"Baia",
+        "sensors":"Sensores"
+      }
+    }
+  },
+  "buttons":{
+    "update":"Atualizar",
+    "reset": "Limpar",
+    "register":"Cadastrar",
+    "login":"Login",
+    "create":"Cadastrar-se",
+    "activate":"Aceitar",
+    "exclude":"Excluir",
+    "logs":"Logs",
+    "deactivate":"Desativar",
+    "add":"Adicionar"
+  },
+  "fields": {
+    "name": "Nome",
+    "email": "E-mail",
+    "password": "Senha",
+    "matrix":"Matriz",
+    "active":"Ativo",
+    "inactive":"Inativo",
+    "expected_parturition":"Parto Esperado",
+    "effective_parturition":"Parto Efetivo",
+    "number_parturition":"Número do Parto",
+    "live_pigs":"Leitões Vivos",
+    "dead_pigs":"Leitões Mortos",
+    "weaning":"Desmame",
+    "status":"Status",
+    "maximum_ambient_temperature":"Temperatura máxima do ambiente",
+    "minimum_ambient_temperature":"Temperatura mínima do ambiente",
+    "maximum_floor_temperature":"Temperatura máxima do piso",
+    "minimum_floor_temperature":"Temperatura mínima do piso",
+    "week":"Semana",
+    "box":"Baia",
+    "number":"Número",
+    "area":"Área",
+    "controller":"Controlador",
+    "lamp":"Lâmpada"
+  },
+  "rules": {
+    "required": "{field} é obrigatório.",
+    "invalid": "{field} é inválido.",
+    "length_bigger_than": "{field} precisa ter {length}+ caracteres",
+    "length_less_than": "{field} precisa ter {length}- caracteres"
   }
 }

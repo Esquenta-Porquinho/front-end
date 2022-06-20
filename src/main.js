@@ -1,16 +1,16 @@
-import Vue from 'vue';
-import App from './App.vue';
-import Clipboard from 'v-clipboard'
-import router from './router'
-import vuetify from './plugins/vuetify';
-import i18n from './plugins/i18n'
+import Vue from "vue";
+import App from "@/App.vue";
+import router from "./router";
+import vuetify from "./plugins/vuetify";
+import i18n from "./plugins/i18n";
+import VueCharts from "vue-chartjs";
 
-Vue.use(Clipboard)
+Vue.use(VueCharts);
 
 new Vue({
-  el: '#app',
+  el: "#app",
   router,
   vuetify,
   i18n,
-  render: h => h(App)
+  render: (h) => h(App),
 });

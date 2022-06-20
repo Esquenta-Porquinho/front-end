@@ -1,20 +1,19 @@
 <template>
   <v-app id="app">
     <v-main>
-      <router-view/>
+      <router-view />
     </v-main>
   </v-app>
 </template>
 
 <script>
-  export default {
-    name: 'App'
-  }
+export default {
+  name: "App",
+};
 </script>
 
-
 <style>
-  html {
-    overflow-y: hidden;
-  }
+html {
+  overflow-y: hidden !important;
+}
 </style>

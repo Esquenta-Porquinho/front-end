@@ -1,29 +1,36 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import HomeView from '../modules/home/HomeView'
-import SettingsView from "../modules/home/SettingsView";
+import Vue from "vue";
+import VueRouter from "vue-router";
+import { authRoutes } from "@/modules/auth/auth-routes";
+import { userRoutes } from "@/modules/user/user-routes";
+import { matrixRoutes } from "@/modules/matrix/matrix-routes";
+import { gestationRoutes } from "@/modules/gestation/gestation-routes";
+import { parametersRoutes } from "../modules/parameters/parameters-routes";
+import { boxRoutes } from "../modules/box/box-routes";
+import { chartsRoutes } from "../modules/charts/charts-routes";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
-  {
-    path: '/',
-    name: 'HomeView',
-    component: HomeView,
-    children: [
-      {
-        path: 'settings',
-        name: 'SettingsView',
-        component: SettingsView
-      }
-    ]
-  }
-]
+  ...authRoutes,
+  ...userRoutes,
+  ...matrixRoutes,
+  ...boxRoutes,
+  ...chartsRoutes,
+  ...gestationRoutes,
+  ...parametersRoutes,
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+router.beforeEach((to, from, next) => {
+  const token = localStorage.getItem("token");
+  token || to.name === "LoginView" || to.name === "RegisterView"
+    ? next()
+    : next({ name: "LoginView" });
+});
+
+export default router;

@@ -1,8 +1,199 @@
 {
   "common": {
-    "title": "Title",
-    "home": "Home",
-    "settings": "Settings",
-    "search": "Search"
+    "project": {
+      "name": "Esquenta Porquinho"
+    },
+    "college": {
+      "name": "Bacharelado em Sistemas de Informação",
+      "unit": "© IFC-Araquari"
+    },
+    "menu":{
+      "charts":"Monitoring",
+      "users":{
+        "title":"Users",
+        "all":"Users",
+        "requests":"Requests",
+        "profile":"Profile"
+      },
+      "box":{
+        "title":"Box",
+        "all":"Boxes",
+        "new":"New Box"
+      },
+      "matrix":{
+        "title":"Matrix",
+        "all":"Matrices",
+        "new":"New Matrix"
+      },
+      "gestation":{
+        "title":"Gestation",
+        "all":"Gestations",
+        "new":"New Gestation"
+      },
+      "parameters":{
+        "title":"Matrix",
+        "all":"Parameters",
+        "new":"New Parameters"
+      },
+      "logout":"Logout"
+    }
+  },
+  "views": {
+    "auth": {
+      "login": {
+        "title": "Login",
+        "error": "Verify your credentials"
+      },
+      "register": {
+        "title": "Register",
+        "error": "Failed to register"
+      }
+    },
+    "user":{
+      "profile":{
+        "title": "Profile"
+      },
+      "update":{
+        "title": "Update",
+        "error": "Something went wrong !"
+      },
+      "logs":{
+        "title":"Logs",
+        "headers":{
+          "user":"User",
+          "date":"Date",
+          "action":"Actions"
+        }
+      },
+      "updateRole":{
+        "title":"Update Role"
+      },
+      "requests":{
+        "title":"Requests"
+      },
+      "all":{
+        "title":"Users",
+        "headers":{
+          "name":"Name",
+          "email":"E-mail",
+          "role":"Role"
+        }
+      }
+    },
+    "matrix":{
+      "all":{
+        "title":"Matrices",
+        "headers":{
+          "matrix":"Matrix"
+        }
+      },
+      "new":{
+        "title":"New Matrix"
+      },
+      "update":{
+        "title":"Update Matrix"
+      }
+    },
+    "gestation":{
+      "update":{
+        "title":"Update Gestation"
+      },
+      "new":{
+        "title":"New Gestation"
+      },
+      "list":{
+        "title":"Gestations",
+        "header":{
+          "box":"Box",
+          "matrix":"Matrix",
+          "status":"Status"
+        }
+      }
+    },
+    "parameters":{
+      "update":{
+        "title":"Update Parameters"
+      },
+      "new":{
+        "title":"New Parameters"
+      },
+      "list":{
+        "title":"Parameters",
+        "header":{
+          "week":"Week",
+          "status":"Status",
+          "box":"Box"
+        }
+      }
+    },
+    "box":{
+      "update":{
+        "title":"Update Box"
+      },
+      "new":{
+        "title":"New Box"
+      },
+      "list":{
+        "title":"Boxes",
+        "header":{
+          "number":"Number",
+          "area":"Area",
+          "status":"Status",
+          "controller":"Controller"
+        }
+      }
+    },
+    "charts":{
+      "labels":{
+        "temperature":"Temperature",
+        "datetime":"Date/Time",
+        "monitoring":"Monitoring",
+        "box":"Box",
+        "sensors":"Sensors"
+      }
+    }
+  },
+  "buttons":{
+    "update":"Update",
+    "reset": "Reset",
+    "register":"Register",
+    "login":"Login",
+    "create":"Create Account",
+    "activate":"Activate",
+    "exclude":"Exclude",
+    "logs":"Logs",
+    "deactivate":"Deactivate",
+    "add":"Add"
+  },
+  "fields": {
+    "name": "Name",
+    "email": "E-mail",
+    "password": "Password",
+    "matrix":"Matrix",
+    "active":"Active",
+    "inactive":"Inactive",
+    "expected_parturition":"Expected Parturition",
+    "effective_parturition":"Effective Parturition",
+    "number_parturition":"Number of Parturition",
+    "live_pigs":"Live Pigs",
+    "dead_pigs":"Dead Pigs",
+    "weaning":"Weaning",
+    "status":"Status",
+    "maximum_ambient_temperature":"Maximum ammbient temperature",
+    "minimum_ambient_temperature":"Minimum ambient temperature",
+    "maximum_floor_temperature":"Maximum floor temperature",
+    "minimum_floor_temperature":"Minimum floor temperature",
+    "week":"Week",
+    "box":"Box",
+    "number":"Number",
+    "area":"Area",
+    "controller":"Controller",
+    "lamp":"Lamp"
+  },
+  "rules": {
+    "required": "{field} is required.",
+    "invalid": "{field} is invalid.",
+    "length_bigger_than": "{field} must have {length}+ characters",
+    "length_less_than": "{field} must have {length}- characters"
   }
 }
