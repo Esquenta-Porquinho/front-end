@@ -12,28 +12,28 @@
               width="100%"
               flat
             >
-              <v-toolbar-title v-text="$t('views.user.updateRole.title')" />
+              <v-toolbar-title v-text="$t('views.user.update_role.title')" />
               <v-spacer />
               <v-icon dark right v-text="'mdi-account-box'" />
             </v-toolbar>
-            <v-card-text>
-              <v-form ref="form">
+            <v-card-text v-if="user">
+              <v-form>
                 <v-text-field
-                  v-model="information.name"
+                  v-model="user.name"
                   :counter="10"
                   prepend-icon="mdi-account"
                   disabled
                 >
                 </v-text-field>
                 <v-text-field
-                  v-model="information.email"
+                  v-model="user.email"
                   :counter="30"
                   prepend-icon="mdi-email"
                   disabled
                 >
                 </v-text-field>
                 <v-select
-                  v-model="information.role"
+                  v-model="user.role"
                   :items="roles"
                   prepend-icon="mdi-account-box"
                   standard
@@ -44,10 +44,19 @@
                 <v-btn
                   block
                   color="secondary"
-                  @click="submit"
+                  @click="update()"
                   v-text="$t('buttons.update')"
                 />
               </v-card-actions>
+            </v-card-text>
+            <v-card-text v-else-if="errorLoadShow">
+              <ErrorLoading
+                error="views.user.update_role.error"
+                :event="getUser"
+              />
+            </v-card-text>
+            <v-card-text v-else>
+              <Loading />
             </v-card-text>
           </v-card>
         </v-col>
@@ -60,17 +69,40 @@
 <script>
 import ToolBar from "@/modules/common/ToolBar";
 import FooterBar from "@/modules/common/FooterBar";
+import ErrorLoading from "@/modules/common/ErrorLoading";
+import Loading from "@/modules/common/Loading";
+import { getUserById, updateRole } from "@/modules/api/user/user-service";
 
 export default {
-  components: { ToolBar, FooterBar },
+  components: { ToolBar, FooterBar, ErrorLoading, Loading },
   data: () => ({
-    information: {
-      name: "Jean",
-      email: "jeanjms.1999@gmail.com",
-      role: "ADMIN",
-    },
     roles: ["SIMPLE", "MANAGER", "ADMIN"],
+    user: null,
+    errorShow: false,
+    errorLoadShow: false,
   }),
+  async created() {
+    await this.getUser();
+  },
+  methods: {
+    async getUser() {
+      try {
+        const userId = this.$route.params.id;
+        this.user = await getUserById(userId);
+      } catch (e) {
+        this.errorLoadShow = true;
+      }
+    },
+    async update() {
+      try {
+        await updateRole(this.user.id, { role: this.user.role });
+        this.user = null;
+        await this.getUser();
+      } catch (e) {
+        this.errorShow = true;
+      }
+    },
+  },
 };
 </script>
 

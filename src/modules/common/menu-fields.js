@@ -96,12 +96,12 @@ const userAdmin = [
       {
         title: "common.menu.users.all",
         icon: "mdi-account-details",
-        to: { name: "UsersView" },
+        to: { name: "UsersView", params: { page: 1 } },
       },
       {
         title: "common.menu.users.requests",
         icon: "mdi-account-clock",
-        to: { name: "UserRequestsView" },
+        to: { name: "UserRequestsView", params: { page: 1 } },
       },
     ],
   },
@@ -119,7 +119,7 @@ const userManager = [
       {
         title: "common.menu.users.requests",
         icon: "mdi-account-clock",
-        to: { name: "UserRequestsView" },
+        to: { name: "UserRequestsView", params: { page: 1 } },
       },
     ],
   },

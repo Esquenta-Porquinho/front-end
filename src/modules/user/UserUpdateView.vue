@@ -16,7 +16,7 @@
               <v-spacer />
               <v-icon dark right v-text="'mdi-account-check'" />
             </v-toolbar>
-            <v-card-text>
+            <v-card-text v-if="user">
               <v-form ref="form">
                 <v-alert
                   v-show="errorShow"
@@ -26,7 +26,7 @@
                   v-text="$t('views.user.update.error')"
                 />
                 <v-text-field
-                  v-model="information.name"
+                  v-model="user.name"
                   :counter="30"
                   :rules="rules.nameRules"
                   :label="$t('fields.name')"
@@ -35,7 +35,7 @@
                 >
                 </v-text-field>
                 <v-text-field
-                  v-model="information.email"
+                  v-model="user.email"
                   :counter="45"
                   :rules="rules.emailRules"
                   :label="$t('fields.email')"
@@ -44,7 +44,7 @@
                 >
                 </v-text-field>
                 <v-text-field
-                  v-model="information.password"
+                  v-model="user.password"
                   :counter="16"
                   :label="$t('fields.password')"
                   :rules="rules.passwordRules"
@@ -59,7 +59,7 @@
                 <v-btn
                   block
                   color="secondary"
-                  @click="send()"
+                  @click="updateUser()"
                   v-text="$t('buttons.update')"
                 />
               </v-card-actions>
@@ -72,6 +72,12 @@
                 />
               </v-card-actions>
             </v-card-text>
+            <v-card-text v-else-if="errorLoadShow">
+              <ErrorLoading error="views.user.update.error" :event="getUser" />
+            </v-card-text>
+            <v-card-text v-else>
+              <Loading />
+            </v-card-text>
           </v-card>
         </v-col>
       </v-row>
@@ -83,7 +89,9 @@
 <script>
 import ToolBar from "@/modules/common/ToolBar";
 import FooterBar from "@/modules/common/FooterBar";
-import { create } from "../api/auth/auth-service";
+import ErrorLoading from "@/modules/common/ErrorLoading";
+import Loading from "@/modules/common/Loading";
+import { update, getCurrentUser } from "@/modules/api/user/user-service";
 import router from "@/router/";
 import {
   emailRules,
@@ -92,25 +100,35 @@ import {
 } from "@/modules/auth/auth-rules";
 
 export default {
-  components: { ToolBar, FooterBar },
-  name: "Update User",
+  components: { ToolBar, FooterBar, ErrorLoading, Loading },
   data: () => ({
-    information: {},
+    user: null,
     errorShow: false,
+    errorLoadShow: false,
     rules: {
-      nameRules: nameRules,
-      emailRules: emailRules,
-      passwordRules: passwordRules,
+      nameRules,
+      emailRules,
+      passwordRules,
     },
   }),
+  async created() {
+    await this.getUser();
+  },
   methods: {
-    async send() {
+    async getUser() {
+      try {
+        this.user = await getCurrentUser();
+      } catch (e) {
+        this.errorLoadShow = true;
+      }
+    },
+    async updateUser() {
       if (!this.$refs.form.validate()) {
         this.errorShow = true;
       }
 
       try {
-        await create(this.information);
+        await update(this.user.id, this.user);
         router.push("/user");
       } catch (e) {
         this.errorShow = true;

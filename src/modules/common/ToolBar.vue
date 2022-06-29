@@ -12,7 +12,7 @@
       <LanguageSwitcher />
     </v-app-bar>
 
-    <v-navigation-drawer temporary v-model="drawer" app>
+    <v-navigation-drawer temporary v-model="drawer" app v-if="user">
       <v-list-item link :to="{ name: 'UserView', params: { id: user.id } }">
         <v-list-item-content>
           <v-list-item-title class="title" v-text="user.name" />
@@ -54,48 +54,61 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
+    <v-navigation-drawer app temporary v-model="drawer" v-else-if="errorShow">
+      <ErrorLoading error="common.menu.error" :event="menu" />
+    </v-navigation-drawer>
+    <v-navigation-drawer app temporary v-model="drawer" v-else>
+      <Loading />
+    </v-navigation-drawer>
   </div>
 </template>
 
 <script>
 import LanguageSwitcher from "@/modules/common/LanguageSwitcher";
+import ErrorLoading from "@/modules/common/ErrorLoading";
+import Loading from "@/modules/common/Loading";
 import {
   adminFields,
   managerFields,
   simpleFields,
 } from "@/modules/common/menu-fields";
-import { getCurrentUserRole, logout } from "@/modules/common/token-service";
+import { logout } from "@/modules/common/token-service";
+import { getCurrentUser } from "@/modules/api/user/user-service";
 
 export default {
-  components: { LanguageSwitcher },
+  components: { LanguageSwitcher, ErrorLoading, Loading },
   name: "ToolBar",
   data: () => ({
     drawer: false,
     items: [],
     logout: logout,
-    user: {
-      id: 1,
-      name: "Adamo",
-      role: "ADMIN",
-    },
+    user: null,
+    errorShow: false,
   }),
-  created() {
-    const role = getCurrentUserRole();
-
-    switch (role) {
-      case "ROLE_ADMIN":
-        this.items = adminFields;
-        break;
-      case "ROLE_MANAGER":
-        this.items = managerFields;
-        break;
-      case "ROLE_SIMPLE":
-        this.items = simpleFields;
-        break;
-      default:
-        this.logout();
-        break;
-    }
+  async created() {
+    this.menu();
+  },
+  methods: {
+    async menu() {
+      try {
+        this.user = await getCurrentUser();
+        switch (this.user.role) {
+          case "ADMIN":
+            this.items = adminFields;
+            break;
+          case "MANAGER":
+            this.items = managerFields;
+            break;
+          case "SIMPLE":
+            this.items = simpleFields;
+            break;
+          default:
+            break;
+        }
+      } catch (e) {
+        this.errorShow = true;
+      }
+    },
   },
 };
 </script>

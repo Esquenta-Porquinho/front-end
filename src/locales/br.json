@@ -35,7 +35,8 @@
         "all":"Parâmetros",
         "new":"Novos Parâmetros"
       },
-      "logout":"Logout"
+      "logout":"Logout",
+      "error":"Algo estranho ocorreu!"
     }
   },
   "views": {
@@ -51,11 +52,12 @@
     },
     "user":{
       "profile":{
-        "title": "Perfil"
+        "title": "Perfil",
+        "error": "Algo estranho aconteceu !"
       },
       "update":{
         "title": "Atualizar",
-        "error": "Algo deu errado !"
+        "error": "Algo estranho aconteceu !"
       },
       "logs":{
         "title":"Logs",
@@ -63,13 +65,20 @@
           "user":"Usuário",
           "date":"Data",
           "action":"Ação"
-        }
+        },
+        "error": "Algo estranho aconteceu !"
       },
-      "updateRole":{
-        "title":"Atualizar Permissões"
+      "update_role":{
+        "title":"Atualizar Permissões",
+        "error": "Algo estranho aconteceu !"
       },
       "requests":{
-        "title":"Requisições"
+        "title":"Requisições",
+        "headers":{
+          "name":"Nome",
+          "email":"E-mail"
+        },
+        "error": "Algo estranho aconteceu !"
       },
       "all":{
         "title":"Usuários",
@@ -77,7 +86,8 @@
           "name":"Nome",
           "email":"E-mail",
           "role":"Permissões"
-        }
+        },
+        "error": "Algo estranho aconteceu !"
       }
     },
     "matrix":{
@@ -159,11 +169,13 @@
     "register":"Cadastrar",
     "login":"Login",
     "create":"Cadastrar-se",
-    "activate":"Aceitar",
+    "activate":"Ativar",
+    "accept":"Aceitar",
     "exclude":"Excluir",
     "logs":"Logs",
     "deactivate":"Desativar",
-    "add":"Adicionar"
+    "add":"Adicionar",
+    "retry": "Tentar Novamente"
   },
   "fields": {
     "name": "Nome",
